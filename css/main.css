@@ -3939,7 +3939,6 @@
     list-style-type: none;
 	overflow: hidden;
 	height: 10rem;
-	margin-top: -9rem;
 	background-color: #ECEAEA;
 	box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.75);
 	border-bottom-left-radius: var(--borderradius);
