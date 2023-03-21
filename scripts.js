@@ -1,12 +1,17 @@
 const nameInput = document.getElementById('name');
 const suggestions = document.getElementById('suggestions');
-const names = [
-    'Safwan Chowdhury',
-    'Seyon Vakeesan',
-    'Gerosshanth Satkunam',
-    'Nadeem Imani'
+let names = [];
 
-    ];
+// Fetch names from the text file
+fetch('names.txt')
+  .then(response => response.text())
+  .then(text => {
+    names = text.split('\n').map(name => name.trim());
+  })
+  .catch(error => {
+    console.error('Error fetching names:', error);
+  });
+
 
 nameInput.addEventListener('input', (e) => {
     const input = e.target.value.trim().toLowerCase();
