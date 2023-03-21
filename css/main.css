@@ -3940,6 +3940,7 @@
 }
 
 #suggestions {
+	margin-top: -1rem;
 	position: absolute;
     z-index: 10;
     list-style-type: none;
