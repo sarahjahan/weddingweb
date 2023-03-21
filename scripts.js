@@ -14,21 +14,21 @@ nameInput.addEventListener('input', (e) => {
     if (input.length > 0) {
         const matches = names.filter(name => name.toLowerCase().startsWith(input));
         if (matches.length > 0) {
-            suggestions.classList.remove('hidden');
+            suggestions.classList.add('visible');
             matches.forEach(match => {
                 const li = document.createElement('li');
                 li.textContent = match;
                 li.addEventListener('click', () => {
                     nameInput.value = match;
-                    suggestions.classList.add('hidden');
+                    suggestions.classList.remove('visible');
                 });
                 suggestions.appendChild(li);
             });
         } else {
-            suggestions.classList.add('hidden');
+            suggestions.classList.remove('visible');
         }
     } else {
-        suggestions.classList.add('hidden');
+        suggestions.classList.remove('visible');
     }
 });
 

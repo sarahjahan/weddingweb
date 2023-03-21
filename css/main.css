@@ -3953,6 +3953,14 @@
 	box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.75);
 	border-bottom-left-radius: var(--borderradius);
 	border-bottom-right-radius: var(--borderradius);
+	transition: all 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Add a new class for visible state */
+#suggestions.visible {
+    max-height: 200px; /* adjust this value according to the max height you want for the dropdown */
 }
 
 #suggestions li {
