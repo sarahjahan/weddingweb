@@ -3960,6 +3960,7 @@
     padding: 1.5rem;
     cursor: pointer;
 	color: black!important;
+	text-align: center;
 }
 
 #suggestions li:hover {
