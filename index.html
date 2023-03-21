@@ -209,15 +209,20 @@
 	});
 	document.addEventListener('DOMContentLoaded', function () {
   setTimeout(function () {
-    var clickEvent = new MouseEvent('click', {
-      bubbles: true,
-      cancelable: true,
-      view: window
-    });
+    function simulateEvent(eventName) {
+      var event = new Event(eventName, {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
 
-    var element = document.documentElement;
-    element.dispatchEvent(clickEvent);
-  }, 50);
+      var element = document.documentElement;
+      element.dispatchEvent(event);
+    }
+
+    simulateEvent('click');
+    simulateEvent('touchend');
+  }, 100);
 });
 	</script>
 
