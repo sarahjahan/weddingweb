@@ -3961,7 +3961,7 @@
 
 /* Add a new class for visible state */
 #suggestions.visible {
-    max-height: max-content; /* adjust this value according to the max height you want for the dropdown */
+    max-height: 500px; /* adjust this value according to the max height you want for the dropdown */
 }
 
 #suggestions li {
