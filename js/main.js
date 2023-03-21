@@ -301,7 +301,7 @@
  		body: data,
  	  })
  	  .then(() => {
- 		alert("Thank you for confirming your attendance");
+ 		alert("Thank you for confirming your attendance.");
  	  })
  	});
    });
