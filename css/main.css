@@ -4126,7 +4126,6 @@
 
 #suggestions {
     list-style-type: none;
-    display: flex;
 	flex-direction: column;
 	overflow: hidden;
 	height: 10rem;
