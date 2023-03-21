@@ -26,11 +26,3 @@ nameInput.addEventListener('input', (e) => {
     }
 });
 
-document.getElementById('rsvp-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const guests = formData.get('guests');
-    console.log(`Name: ${name}, Number of Guests: ${guests}`);
-    // Add logic for submitting the form data (e.g., to a server or storage)
-});

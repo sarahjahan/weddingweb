@@ -1,33 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding RSVP</title>
-    <link rel="stylesheet" href="styles.css">
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Saf & Sarah Tie The Knot | Official RSVP</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Safwan and Sarah tie the knot.">
+   <meta name="keywords" content="northcore, northcore condos, preconstruction, preconstruction investments, preconstruction investments milton, condos, condos for sale in toronto, platinum pricing, developer authorized access, floorplans, floor plans, house for sale, house, sale">
+   <meta name="author" content="">
+   <link rel="canonical" \
+   <meta property="og:locale" content="en_US">
+   <meta property="og:type" content="website">
+   <meta property="og:title" content="Saf & Sarah Tie The Knot | Official RSVP">
+   <meta property="og:site_name" content="Saf & Sarah Tie The Knot | Official RSVP">
+
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   	<link rel="stylesheet" href="css/base.css">
+   	<link rel="stylesheet" href="css/main.css">
+   	<link rel="stylesheet" href="css/amsterdam-4-cufonfonts-webfont/style.css">
+   	<link rel="stylesheet" href="css/vendor.css">
+	<link rel="stylesheet" href="https://use.typekit.net/wlr6gva.css">
+	<link href="https://fonts.cdnfonts.com/css/the-amsterdam" rel="stylesheet">
+	<link href="http://fonts.cdnfonts.com/css/circular-std-book" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@100;200;300;400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+
+
+   <!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
+
+
+   <!-- favicons
+	================================================== -->
+
+
+
+   <!-- SEO Tags
+	================================================== -->
 </head>
-<body>
-    <div class="video-container">
-        <video autoplay muted loop id="background-video">
-            <source src="wedding-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div class="form-container">
-        <h1>RSVP</h1>
-        <form id="rsvp-form">
-            <div class="input-container">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" autocomplete="off">
-                <ul id="suggestions" class="hidden"></ul>
-            </div>
-            <div class="input-container">
-                <label for="guests">Number of guests:</label>
-                <input type="number" id="guests" name="guests" min="1">
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-    <script src="scripts.js"></script>
+
+<body id="top">
+
+
+    <!------------ Header ------------>
+
+   <header>
+
+   		<div class="top-bar">
+   			<a class="menu-toggle" href="#"><span>Menu</span></a>
+		   	<nav id="main-nav-wrap">
+			   <ul class="main-navigation navfx">
+					<div class="condologo"></div>
+					<li class="borderbottom"><a class="smoothscroll"  href="#banner" title="">Home</a></li>
+					<li class="borderbottom"><a class="smoothscroll"  href="#contact" title="">RSVP</a></li>
+					<li class="borderbottom"><a class="smoothscroll"  href="#photogallerypage" title="">Photos</a></li>
+				</ul>
+			</nav>
+   		</div> <!-- /top-bar -->
+   </header>
+
+    <!------------ Background ------------>
+
+   <section id="intro" aria-label="introduction">
+		<div class="overlaybg"></div>
+		<div class="headerimage"></div>
+   </section>
+
+    <!------------ Body ------------>
+
+	<div class="wrapper">
+
+		<!------------ Video ------------>
+
+		<section id="banner">
+			<video id="background-video" playsinline autoplay muted>
+				<source src="/assets/images/gallery/Saf&Sarah2.mp4" type="video/mp4">
+			</video>
+		</section>
+
+
+    	<!------------ Contact Box ------------>
+
+		<section class="contactrsvp" id="contact" aria-label="contact">
+			<div class="contactbox2 borderbottom">
+				<div class="row section-intro">
+					<div class="col-twelve">
+						<h1 class="rsvptitle">RSVP</h1>
+						<h3 class="rsvpcaption">By April 30th 2023</h3>
+						<br>
+					</div>
+				</div> <!-- /section-intro -->
+				<div class="row contact-form">
+					<div class="col-twelve">
+
+						<!-- form -->
+							<div id="register" class="row" aria-label="register">
+								<form id="my-form" class="form" method="post" action="https://script.google.com/macros/s/AKfycbxKcXcNglDp_aOELglqiREbhSHueuCoqZmr19GEP8v-WddX93hcDgYNVP9qFAnO0wkosw/exec" onsubmit="return checkForm(this)" >
+								<div class="nameinput">
+									<input class="my-textbox" type="text" id="name" name="name" autocomplete="off" required="">
+									<ul id="suggestions" class="hidden"></ul>
+								</div>
+								<div class="product-quantity">
+									<input data-min="1" data-max="0" type="text" class="quantity-box" name="quantity" placeholder="Number of Guests" readonly="true">
+									<div class="quantity-selectors-container">
+									  <div class="quantity-selectors">
+										<button type="button" class="decrement-quantity" aria-label="Subtract one" data-direction="-1" disabled="disabled"><span>&#8722;</span></button>
+										<button type="button" class="increment-quantity" aria-label="Add one" data-direction="1"><span>&#43;</span></button>
+									  </div>
+									</div>
+								  </div>
+								<input type="submit" name="myButton" id="register" value="Submit">
+								</form>
+
+							</div>
+
+						<!-- contact-warning -->
+
+							<div id="message-warning">
+							</div>
+
+						<!-- contact-success -->
+
+							<div id="message-success">
+								<i class="fa fa-check"></i>
+								Thank you for confirming your attendance.<br>
+							</div>
+
+							<div class="row section-intro">
+								<!--<div class="contact-box col-twelve">
+									<p>Can't find your name?</p>
+									<a class="contact-box-link" href=""><p>Contact Us</p></a>
+								</div>-->
+								<div class="contact-box col-twelve">
+									<p>Can't find your name?</p>
+									<br>
+
+									<div class="contacttitle">
+										<span class="icon"><i class="icon-phone"></i></span>
+										<p>Contact Us</p>
+									</div>
+									<div class="contactnamebox">
+										<div class="contactname">
+											<p>Sarah</p>
+											<p>647-879-4789</p>
+										</div>
+										<div class="contactname">
+											<p>Safwan</p>
+											<p>647-628-9310</p>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="photogallerypage">
+			<h1>Photos</h1>
+			<h3>Coming Soon</h3>
+		</section>
+
+		<!-- footer -->
+
+			<footer>
+				<div class="row">
+						<div class="footerbox">
+						</div>
+						<div id="go-top">
+							<a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+						</div>
+				</div> <!-- /row -->
+			</footer>
+
+		<!-- Pre-Loader -->
+
+
+	</div>
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="js/jquery-2.1.3.min.js"></script>
+   <script src="js/plugins.js"></script>
+   <script src="js/main.js"></script>
+   <script src="scripts.js"></script>
+
+
 </body>
+
 </html>
