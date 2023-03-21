@@ -88,7 +88,7 @@
 		<!------------ Video ------------>
 
 		<section id="banner">
-			<video id="background-video"  autoplay muted loop playsinline>
+			<video id="background-video" playsinline loop>
 				<source src="/assets/images/gallery/Saf&Sarah2.mp4" type="video/mp4">
 			</video>
 		</section>
@@ -200,6 +200,15 @@
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
    <script src="scripts.js"></script>
+
+   <script>
+	window.addEventListener('load', function() {
+		setTimeout(function() {
+			var video = document.getElementById('background-video');
+			video.play();
+		}, 25);
+	});
+	</script>
 
 
 </body>
