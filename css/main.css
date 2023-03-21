@@ -3961,6 +3961,7 @@
     cursor: pointer;
 	color: black!important;
 	text-align: center;
+	border-top: 1px solid black;
 }
 
 #suggestions li:hover {
