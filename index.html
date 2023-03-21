@@ -227,18 +227,18 @@
         clickOverlay.addEventListener('click', function () {
           clickOverlay.remove();
         });
-        clickOverlay.addEventListener('touchend', function () {
+        clickOverlay.addEventListener('touchstart', function () {
           clickOverlay.remove();
         });
         document.body.appendChild(clickOverlay);
 
-        var clickEvent = new MouseEvent('click', {
+        var touchEvent = new Event('touchstart', {
           bubbles: true,
           cancelable: true,
           view: window
         });
 
-        clickOverlay.dispatchEvent(clickEvent);
+        clickOverlay.dispatchEvent(touchEvent);
       }, 500);
     });
 	</script>
