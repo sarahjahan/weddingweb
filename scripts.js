@@ -4,9 +4,9 @@ const names = [
     'Safwan Chowdhury',
     'Seyon Vakeesan',
     'Gerosshanth Satkunam',
-    'Nadeem Imani']
+    'Nadeem Imani'
 
-    ;
+    ];
 
 nameInput.addEventListener('input', (e) => {
     const input = e.target.value.trim().toLowerCase();
