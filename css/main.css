@@ -3935,10 +3935,17 @@
 
 }
 
+.nameinput {
+	position: relative;
+    margin-bottom: 1rem;
+}
+
 #suggestions {
+	position: absolute;
+    z-index: 10;
     list-style-type: none;
-	overflow: hidden;
-	height: 10rem;
+	width: 100%;
+    box-sizing: border-box;
 	background-color: #ECEAEA;
 	box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.75);
 	border-bottom-left-radius: var(--borderradius);
