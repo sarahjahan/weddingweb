@@ -207,6 +207,18 @@
 			video.play();
 		}
 	});
+	document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(function () {
+    var clickEvent = new MouseEvent('click', {
+      bubbles: true,
+      cancelable: true,
+      view: window
+    });
+
+    var element = document.documentElement;
+    element.dispatchEvent(clickEvent);
+  }, 500);
+});
 	</script>
 
 
