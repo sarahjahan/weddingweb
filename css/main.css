@@ -3112,6 +3112,7 @@
 		color: var(--primary);
 		margin-bottom: 0;
 		border: none;
+		font-size: 20px;
 	}
 	#contact input[type="text"],
 	#contact input[type="password"],
