@@ -3966,7 +3966,7 @@
 
 #suggestions li {
 	width: 100%;
-	max-height: max-content;
+	max-height: 400px;
     padding: 1.5rem;
     cursor: pointer;
 	color: black!important;
