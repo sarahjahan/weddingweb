@@ -1,6 +1,12 @@
 const nameInput = document.getElementById('name');
 const suggestions = document.getElementById('suggestions');
-const names = ['John Doe', 'Jane Smith', 'Mike Johnson', 'Emma Watson'];
+const names = [
+    'Safwan Chowdhury',
+    'Seyon Vakeesan',
+    'Gerosshanth Satkunam',
+    'Nadeem Imani']
+
+    ;
 
 nameInput.addEventListener('input', (e) => {
     const input = e.target.value.trim().toLowerCase();
