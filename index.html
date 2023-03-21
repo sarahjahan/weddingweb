@@ -101,7 +101,7 @@
 		<!------------ Video ------------>
 
 		<section id="banner">
-			<video id="background-video" playsinline muted loop>
+			<video id="background-video" autplay playsinline muted>
 				<source src="/assets/images/gallery/Saf&Sarah2.mp4" type="video/mp4">
 			</video>
 		</section>
@@ -213,35 +213,6 @@
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
    <script src="scripts.js"></script>
-   <script>
-	document.addEventListener('click', function() {
-		var video = document.getElementById('background-video');
-		if (video.paused) {
-			video.play();
-		}
-	});
-	document.addEventListener('DOMContentLoaded', function () {
-      setTimeout(function () {
-        var clickOverlay = document.createElement('div');
-        clickOverlay.id = 'clickOverlay';
-        clickOverlay.addEventListener('click', function () {
-          clickOverlay.remove();
-        });
-        clickOverlay.addEventListener('touchstart', function () {
-          clickOverlay.remove();
-        });
-        document.body.appendChild(clickOverlay);
-
-        var touchEvent = new Event('touchstart', {
-          bubbles: true,
-          cancelable: true,
-          view: window
-        });
-
-        clickOverlay.dispatchEvent(touchEvent);
-      }, 500);
-    });
-	</script>
 
 
 </body>
