@@ -4142,6 +4142,13 @@
 #suggestions li {
     padding: 0.25rem;
     cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 5rem;
+	width: 100%;
+	color: black!important;
+	border-top: 1px solid rgb(192, 192, 192);
 }
 
 #suggestions li:hover {
