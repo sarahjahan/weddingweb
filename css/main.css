@@ -4147,7 +4147,7 @@
 }
 
 .mobilevideo {
-	display: none;
+	display: none!important;
 }
 
 .desktopvideo {
