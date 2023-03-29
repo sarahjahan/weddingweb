@@ -3801,6 +3801,8 @@
 	display: flex;
 	position: fixed;
 	z-index: -2;
+	filter: saturate(.5);
+	opacity: .3;
 }
 
 .overlaybg {
