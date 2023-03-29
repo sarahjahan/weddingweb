@@ -112,91 +112,94 @@
 
 	<div class="wrapper">
 
-		<!------------ Video ------------>
+		<div class="topsection">
 
-		<section id="banner">
-			<video id="background-video" controls>
-				<source src="/assets/images/gallery/Saf&Sarah2.mp4" type="video/mp4">
-			</video>
-		</section>
+			<!------------ Video ------------>
 
+			<section id="banner">
+				<video id="background-video" controls>
+					<source src="/assets/images/gallery/Saf&Sarah2.mp4" type="video/mp4">
+				</video>
+			</section>
 
-    	<!------------ Contact Box ------------>
+			<!------------ Contact Box ------------>
 
-		<section class="contactrsvp" id="contact" aria-label="contact">
-			<div class="contactbox2 borderbottom">
-				<div class="row section-intro">
-					<div class="col-twelve">
-						<h1 class="rsvptitle">RSVP</h1>
-						<h3 class="rsvpcaption">By April 30th 2023</h3>
-						<br>
-					</div>
-				</div> <!-- /section-intro -->
-				<div class="row contact-form">
-					<div class="col-twelve">
+			<section class="contactrsvp" id="contact" aria-label="contact">
+				<div class="contactbox2 borderbottom">
+					<div class="row section-intro">
+						<div class="col-twelve">
+							<h1 class="rsvptitle">RSVP</h1>
+							<h3 class="rsvpcaption">By April 30th 2023</h3>
+							<br>
+						</div>
+					</div> <!-- /section-intro -->
+					<div class="row contact-form">
+						<div class="col-twelve">
 
-						<!-- form -->
-							<div id="register" class="row" aria-label="register">
-								<form id="my-form" class="form" method="post" action="https://script.google.com/macros/s/AKfycbxKcXcNglDp_aOELglqiREbhSHueuCoqZmr19GEP8v-WddX93hcDgYNVP9qFAnO0wkosw/exec" onsubmit="return checkForm(this)" >
-								<div class="nameinput">
-									<input class="my-textbox" placeholder="Name" type="text" id="name" name="name" autocomplete="off" required="">
-									<ul id="suggestions" class="hidden"></ul>
-								</div>
-								<div class="product-quantity">
-									<input data-min="1" data-max="0" type="text" class="quantity-box" name="quantity" placeholder="Number of Guests" readonly="true">
-									<div class="quantity-selectors-container">
-									  <div class="quantity-selectors">
-										<button type="button" class="decrement-quantity" aria-label="Subtract one" data-direction="-1" disabled="disabled"><span>&#8722;</span></button>
-										<button type="button" class="increment-quantity" aria-label="Add one" data-direction="1"><span>&#43;</span></button>
-									  </div>
+							<!-- form -->
+								<div id="register" class="row" aria-label="register">
+									<form id="my-form" class="form" method="post" action="https://script.google.com/macros/s/AKfycbxKcXcNglDp_aOELglqiREbhSHueuCoqZmr19GEP8v-WddX93hcDgYNVP9qFAnO0wkosw/exec" onsubmit="return checkForm(this)" >
+									<div class="nameinput">
+										<input class="my-textbox" placeholder="Name" type="text" id="name" name="name" autocomplete="off" required="">
+										<ul id="suggestions" class="hidden"></ul>
 									</div>
-								  </div>
-								<input type="submit" name="myButton" id="register" value="Submit">
-								</form>
-
-							</div>
-
-						<!-- contact-warning -->
-
-							<div id="message-warning">
-							</div>
-
-						<!-- contact-success -->
-
-							<div id="message-success">
-								<i class="fa fa-check"></i>
-								Thank you for confirming your attendance.<br>
-							</div>
-
-							<div class="row section-intro">
-								<!--<div class="contact-box col-twelve">
-									<p>Can't find your name?</p>
-									<a class="contact-box-link" href=""><p>Contact Us</p></a>
-								</div>-->
-								<div class="contact-box col-twelve">
-									<p>Can't find your name?</p>
-									<br>
-
-									<div class="contacttitle">
-										<span class="icon"><i class="icon-phone"></i></span>
-										<p>Contact Us</p>
-									</div>
-									<div class="contactnamebox">
-										<div class="contactname">
-											<a href="tel:647-879-4789"><p>Sarah</p></a>
-											<a href="tel:647-879-4789"><p>647-879-4789</p></a>
+									<div class="product-quantity">
+										<input data-min="1" data-max="0" type="text" class="quantity-box" name="quantity" placeholder="Number of Guests" readonly="true">
+										<div class="quantity-selectors-container">
+										<div class="quantity-selectors">
+											<button type="button" class="decrement-quantity" aria-label="Subtract one" data-direction="-1" disabled="disabled"><span>&#8722;</span></button>
+											<button type="button" class="increment-quantity" aria-label="Add one" data-direction="1"><span>&#43;</span></button>
 										</div>
-										<div class="contactname">
-											<a href="tel:647-628-9310"><p>Safwan</p></a>
-											<a href="tel:647-628-9310"><p>647-628-9310</p></a>
 										</div>
 									</div>
+									<input type="submit" name="myButton" id="register" value="Submit">
+									</form>
+
 								</div>
-							</div>
+
+							<!-- contact-warning -->
+
+								<div id="message-warning">
+								</div>
+
+							<!-- contact-success -->
+
+								<div id="message-success">
+									<i class="fa fa-check"></i>
+									Thank you for confirming your attendance.<br>
+								</div>
+
+								<div class="row section-intro">
+									<!--<div class="contact-box col-twelve">
+										<p>Can't find your name?</p>
+										<a class="contact-box-link" href=""><p>Contact Us</p></a>
+									</div>-->
+									<div class="contact-box col-twelve">
+										<p>Can't find your name?</p>
+										<br>
+
+										<div class="contacttitle">
+											<span class="icon"><i class="icon-phone"></i></span>
+											<p>Contact Us</p>
+										</div>
+										<div class="contactnamebox">
+											<div class="contactname">
+												<a href="tel:647-879-4789"><p>Sarah</p></a>
+												<a href="tel:647-879-4789"><p>647-879-4789</p></a>
+											</div>
+											<div class="contactname">
+												<a href="tel:647-628-9310"><p>Safwan</p></a>
+												<a href="tel:647-628-9310"><p>647-628-9310</p></a>
+											</div>
+										</div>
+									</div>
+								</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+
+		</div>
 
 		<section id="photogallerypage">
 			<h1>Photos</h1>
