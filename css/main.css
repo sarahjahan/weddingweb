@@ -4048,9 +4048,17 @@
 
 .contactrsvp {
 	display: flex;
-	height: 844px;
+	height: 100vh;
 	justify-content: center;
 	align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+
+	.contactrsvp {
+		height: 844px;
+	}
+
 }
 
 .rsvptitle {
