@@ -4145,3 +4145,23 @@
 	}
 
 }
+
+.mobilevideo {
+	display: none;
+}
+
+.desktopvideo {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	.mobilevideo {
+		display: block;
+	}
+
+	.desktopvideo {
+		display: none;
+	}
+
+}
