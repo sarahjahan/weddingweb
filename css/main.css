@@ -4134,7 +4134,7 @@
 
 .topsection {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	border-bottom: 1px solid #869478e0;
 }
 
