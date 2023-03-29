@@ -4124,3 +4124,7 @@
 }
 
 
+.topsection {
+	display: flex;
+	flex-direction: column;
+}
