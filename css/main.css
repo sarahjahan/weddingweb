@@ -3214,7 +3214,7 @@
 	 */
 	.s-loader {
 		margin: 1.2rem auto 3rem;
-		width: 70px;
+		width: 0px;
 		text-align: center;
 		-webkit-transform: translateX(0.45rem);
 		-ms-transform: translateX(0.45rem);
