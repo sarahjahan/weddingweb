@@ -4134,5 +4134,13 @@
 
 .topsection {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+}
+
+@media only screen and (max-width: 600px) {
+
+	.topsection {
+		flex-direction: column;
+	}
+
 }
