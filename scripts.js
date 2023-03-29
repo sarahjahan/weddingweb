@@ -17,7 +17,7 @@ nameInput.addEventListener('input', (e) => {
     const input = e.target.value.trim().toLowerCase();
     suggestions.innerHTML = '';
     if (input.length > 0) {
-        const matches = names.filter(name => name.toLowerCase().startsWith(input));
+        const matches = names.filter(name => name.toLowerCase().includes(input));
         if (matches.length > 0) {
             suggestions.classList.add('visible');
             matches.forEach(match => {
