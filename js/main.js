@@ -296,11 +296,15 @@
  	  e.preventDefault();
  	  const data = new FormData(form);
  	  const action = e.target.action;
+		const name = form.name.value;
+		const numberOfGuests = form.quantity.value;
  	  fetch(action, {
  		method: 'POST',
  		body: data,
  	  })
-
+ 	  .then(() => {
+		alert(`Thank you ${name} for your RSVP for ${numberOfGuests} guests`);
+ 	  })
  	});
    });
 
