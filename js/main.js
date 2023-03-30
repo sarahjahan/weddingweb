@@ -337,17 +337,14 @@ $("button").on("click", function(ev) {
 	  newQty = parseInt(currentQty) - 1;
 	}
 
-	// make decrement disabled at 1
-	if (newQty == 0) {
-	  $(".decrement-quantity").attr("disabled", "disabled");
-	}
-
 	// remove disabled attribute on subtract
 	if (newQty > 0) {
 	  $(".decrement-quantity").removeAttr("disabled");
+	} else if (newQty == 0) {
+	  $(".decrement-quantity").attr("disabled", "disabled");
 	}
 
-	if (newQty > 0) {
+	if (newQty >= 0) {
 	  newQty = newQty.toString();
 	  $('input[name="quantity"]').val(newQty);
 	}
