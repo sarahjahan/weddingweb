@@ -235,6 +235,18 @@
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
    <script src="scripts.js"></script>
+   <script>
+    function handleSubmit(form) {
+      const name = form.name.value;
+      const numberOfGuests = form.quantity.value;
+
+      // Display a pop-up confirmation message
+      alert(`Thank you ${name} for your RSVP for ${numberOfGuests} guests`);
+
+      // Perform form validation and submission
+      return checkForm(form);
+    }
+  </script>
 
 
 </body>

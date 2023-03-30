@@ -300,9 +300,7 @@
  		method: 'POST',
  		body: data,
  	  })
- 	  .then(() => {
- 		alert("Thank you for confirming your attendance.");
- 	  })
+
  	});
    });
 
