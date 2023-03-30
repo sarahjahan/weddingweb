@@ -4138,7 +4138,6 @@
 }
 
 #photogallerypage p {
-	width: 50%;
 	text-align: center;
 	margin-bottom: 0!important;
 }
@@ -4162,7 +4161,6 @@
 	}
 
 	#photogallerypage p {
-		width: 75%;
 		text-align: center;
 		margin-bottom: 0!important;
 	}
