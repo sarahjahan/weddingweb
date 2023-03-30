@@ -290,6 +290,8 @@
 
 })(jQuery);
 
+/*------------------------ Form Submit ----------------------------- */
+
  window.addEventListener("load", function() {
  	const form = document.getElementById('my-form');
  	form.addEventListener("submit", function(e) {
@@ -325,21 +327,13 @@ function checkForm(form)
 
 /*------------------------ Quantity Selector ----------------------------- */
 
-$(document).ready(function() {
-	// Disable the decrement button on page load if the initial quantity is 0 or empty
-	var initialQty = $('input[name="quantity"]').val();
-	if (initialQty == 0 || initialQty == "") {
-	  $(".decrement-quantity").attr("disabled", "disabled");
-	}
-  });
-
-  $("button").on("click", function(ev) {
+$("button").on("click", function(ev) {
 	var currentQty = $('input[name="quantity"]').val();
 	var qtyDirection = $(this).data("direction");
 	var newQty = 0;
 
 	if (qtyDirection == "1") {
-	  newQty = (currentQty == "") ? 1 : parseInt(currentQty) + 1;
+	  newQty = parseInt(currentQty) + 1;
 	}
 	else if (qtyDirection == "-1") {
 	  newQty = parseInt(currentQty) - 1;
