@@ -4176,6 +4176,11 @@
 }
 @media only screen and (max-width: 600px) {
 
+	#photogallerypage h1 {
+		color: white!important;
+		margin-bottom: 4rem;
+	}
+
 	.topsection {
 		flex-direction: column;
 	}
