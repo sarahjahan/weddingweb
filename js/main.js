@@ -337,8 +337,8 @@ $("button").on("click", function(ev) {
 	  newQty = parseInt(currentQty) - 1;
 	}
 
-	// remove disabled attribute on subtract
-	if (newQty > 0) {
+	// Enable the decrement button when the quantity is 1 or greater
+	if (newQty >= 1) {
 	  $(".decrement-quantity").removeAttr("disabled");
 	} else if (newQty == 0) {
 	  $(".decrement-quantity").attr("disabled", "disabled");
