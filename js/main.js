@@ -303,7 +303,12 @@
  		body: data,
  	  })
  	  .then(() => {
-		alert(`Thank you ${name} for your RSVP for ${numberOfGuests} guests`);
+		if (numberOfGuests > 1) {
+			alert(`Thank you ${name} for RSVPing ${numberOfGuests} guests. See you soon!`);
+		}
+		if (numberOfGuests < 1) {
+			alert(`Thank you ${name} for RSVPing ${numberOfGuests} guest. See you soon!`);
+		}
  	  })
  	});
    });
