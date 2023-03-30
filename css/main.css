@@ -4162,7 +4162,7 @@
 
 	#photogallerypage p {
 		text-align: center;
-		margin-bottom: 0!important;
+		margin-bottom: .5rem!important;
 	}
 
 }
