@@ -326,9 +326,9 @@ function checkForm(form)
 /*------------------------ Quantity Selector ----------------------------- */
 
 $(document).ready(function() {
-	// Disable the decrement button on page load if the initial quantity is 0
+	// Disable the decrement button on page load if the initial quantity is 0 or empty
 	var initialQty = $('input[name="quantity"]').val();
-	if (initialQty == 0) {
+	if (initialQty == 0 || initialQty == "") {
 	  $(".decrement-quantity").attr("disabled", "disabled");
 	}
   });
@@ -339,7 +339,7 @@ $(document).ready(function() {
 	var newQty = 0;
 
 	if (qtyDirection == "1") {
-	  newQty = parseInt(currentQty) + 1;
+	  newQty = (currentQty == "") ? 1 : parseInt(currentQty) + 1;
 	}
 	else if (qtyDirection == "-1") {
 	  newQty = parseInt(currentQty) - 1;
