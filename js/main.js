@@ -325,15 +325,7 @@ function checkForm(form)
 
 /*------------------------ Quantity Selector ----------------------------- */
 
-$(document).ready(function() {
-	// Disable the decrement button on page load if the initial quantity is 0
-	var initialQty = $('input[name="quantity"]').val();
-	if (initialQty == 0) {
-	  $(".decrement-quantity").attr("disabled", "disabled");
-	}
-  });
-
-  $("button").on("click", function(ev) {
+$("button").on("click", function(ev) {
 	var currentQty = $('input[name="quantity"]').val();
 	var qtyDirection = $(this).data("direction");
 	var newQty = 0;
