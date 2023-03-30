@@ -69,7 +69,7 @@
 	 --fontcolor: var(--primary);
 	 --fontcolor2: var(--primary);
 	 --fontcolor3: var(--primary);
-	 --body: 150rem;
+	 --body: 40vw;
 	 --border: solid 1px var(--backgroundsecondary);
 	 --bordercolor: var(--secondary20);
 	 --borderradius: 10px;
