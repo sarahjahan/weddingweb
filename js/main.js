@@ -323,34 +323,6 @@ function checkForm(form)
 }
 
 
-/*------------------------ Name Finder ----------------------------- */
-
-
-var $noResults = $('.no-results');
-var $names = $(".name12");
-var $personsMenu = $('.personsMenu');
-
-var $searchBox = $(".my-textbox").on('input', function() {
-  var value = $(this).val().trim().toUpperCase();
-
-  if (!value) {
-    $personsMenu.hide();
-    return;
-  }
-
-  var matches = $personsMenu.show().find('div').each(function() {
-    var content = $(this).text().toUpperCase();
-    $(this).toggle(content.indexOf(value) !== -1);
-  });
-
-  $noResults.toggle(matches.filter(':visible').length == 0);
-});
-
-$('.item').on('click', function() {
-  $searchBox.val($(this).find('.name12').text());
-  $personsMenu.hide();
-});
-
 /*------------------------ Quantity Selector ----------------------------- */
 
 $("button").on("click", function(ev) {
