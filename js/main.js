@@ -366,12 +366,12 @@ $("button").on("click", function(ev) {
 	}
 
 	// make decrement disabled at 1
-	if (newQty == 1) {
+	if (newQty == 0) {
 	  $(".decrement-quantity").attr("disabled", "disabled");
 	}
 
 	// remove disabled attribute on subtract
-	if (newQty > 1) {
+	if (newQty > 0) {
 	  $(".decrement-quantity").removeAttr("disabled");
 	}
 
