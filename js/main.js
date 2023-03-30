@@ -347,7 +347,7 @@ $("button").on("click", function(ev) {
 	  $(".decrement-quantity").removeAttr("disabled");
 	}
 
-	if (newQty > 0) {
+	if (newQty > -1) {
 	  newQty = newQty.toString();
 	  $('input[name="quantity"]').val(newQty);
 	}
