@@ -4097,7 +4097,7 @@
 	width: 100%;
 	margin: auto;
 	margin-top: 2rem;
-	gap: 2rem;
+	gap: 10rem;
 }
 
 @media only screen and (max-width: 600px) {
