@@ -343,7 +343,7 @@ $("button").on("click", function(ev) {
 	}
 
 	// remove disabled attribute on subtract
-	if (newQty > -1) {
+	if (newQty == 0) {
 	  $(".decrement-quantity").removeAttr("disabled");
 	}
 
