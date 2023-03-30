@@ -4157,6 +4157,13 @@
 
 @media only screen and (max-width: 600px) {
 
+	#photogallerypage p {
+		font-size: 14px;
+	}
+
+}
+@media only screen and (max-width: 600px) {
+
 	.topsection {
 		flex-direction: column;
 	}
