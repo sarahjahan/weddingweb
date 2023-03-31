@@ -4222,4 +4222,5 @@
 .ptext {
 	font-family: var(--ptext);
 	font-weight: 100;
+	font-style: normal;
 }
