@@ -74,26 +74,17 @@ window.addEventListener("load", function () {
     const capitalizedName = capitalizeWords(name);
     const numberOfGuests = form.quantity.value;
 
-    // Check for duplicates before submitting
-    if (submittedNames.includes(name)) {
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+    .then(() => {
       if (numberOfGuests == 1) {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
+        alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest. See you soon!`);
       } else {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
+        alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guests. See you soon!`);
       }
-    } else {
-      fetch(action, {
-        method: 'POST',
-        body: data,
-      })
-      .then(() => {
-        if (numberOfGuests == 1) {
-          alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest. See you soon!`);
-        } else {
-          alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guests. See you soon!`);
-        }
-      });
-    }
+    });
   });
 });
 
@@ -102,7 +93,11 @@ function checkForm(form) {
   const quantity = form.elements['quantity'].value;
 
   if (submittedNames.includes(name)) {
-    alert('You have already submitted. Please do not submit again.');
+    if (quantity == 1) {
+      alert(`Looks like we’ve already received a submission for your group for ${quantity} guest. If there’s a mistake, please call or text one of us.`);
+    } else {
+      alert(`Looks like we’ve already received a submission for your group for ${quantity} guests. If there’s a mistake, please call or text one of us.`);
+    }
     return false;
   }
 
