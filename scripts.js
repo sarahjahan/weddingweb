@@ -71,7 +71,7 @@ window.addEventListener("load", function () {
       if (numberOfGuests == 1) {
         alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
       } else {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
+        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
       }
     } else {
       fetch(action, {
