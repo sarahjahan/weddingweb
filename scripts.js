@@ -106,6 +106,5 @@ function checkForm(form) {
     return false;
   }
 
-  form.myButton.disabled = true;
   return true;
 }
