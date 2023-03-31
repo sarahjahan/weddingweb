@@ -108,7 +108,7 @@ window.addEventListener("load", function () {
           }
         });
       }
+    }
   });
 });
-
 
