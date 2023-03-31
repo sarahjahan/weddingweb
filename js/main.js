@@ -292,37 +292,7 @@
 
 /*------------------------ Form Submit ----------------------------- */
 
- window.addEventListener("load", function() {
- 	const form = document.getElementById('my-form');
- 	form.addEventListener("submit", function(e) {
- 	  e.preventDefault();
- 	  const data = new FormData(form);
- 	  const action = e.target.action;
-		const name = form.name.value;
-		const numberOfGuests = form.quantity.value;
- 	  fetch(action, {
- 		method: 'POST',
- 		body: data,
- 	  })
- 	  .then(() => {
-		if (numberOfGuests == 1) {
-			alert(`Thank you ${name} for RSVPing ${numberOfGuests} guest. See you soon!`);
-		  } else {
-			alert(`Thank you ${name} for RSVPing ${numberOfGuests} guests. See you soon!`);
-		  }
- 	  })
- 	});
-   });
 
-function checkForm(form)
-{
-  //
-  // validate form fields
-  //
-
-  form.myButton.disabled = true;
-  return true;
-}
 
 
 /*------------------------ Quantity Selector ----------------------------- */
@@ -332,20 +302,20 @@ $("button").on("click", function (ev) {
 	var qtyDirection = $(this).data("direction");
 	var newQty = 0;
 	var maxQty = parseInt($('input[name="quantity"]').attr("data-max"), 10) || 0;
-  
+
 	if (qtyDirection == "1") {
 	  newQty = parseInt(currentQty) + 1;
 	} else if (qtyDirection == "-1") {
 	  newQty = parseInt(currentQty) - 1;
 	}
-  
+
 	// Enable the decrement button when the quantity is 2 or greater
 	if (newQty >= 2) {
 	  $(".decrement-quantity").removeAttr("disabled");
 	} else if (newQty <= 1) {
 	  $(".decrement-quantity").attr("disabled", "disabled");
 	}
-  
+
 	// Check if the new quantity is within the allowed range (1 to maxQty)
 	if (newQty >= 1 && newQty <= maxQty) {
 	  newQty = newQty.toString();

@@ -57,13 +57,44 @@ nameInput.addEventListener('input', (e) => {
   }
 });
 
+window.addEventListener("load", function () {
+  const form = document.getElementById('my-form');
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    const name = form.name.value.trim().toLowerCase();
+    const numberOfGuests = form.quantity.value;
+
+    // Check for duplicates before submitting
+    if (submittedNames.includes(name)) {
+      alert('You have already submitted. Please do not submit again.');
+    } else {
+      fetch(action, {
+        method: 'POST',
+        body: data,
+      })
+        .then(() => {
+          if (numberOfGuests == 1) {
+            alert(`Thank you ${name} for RSVPing ${numberOfGuests} guest. See you soon!`);
+          } else {
+            alert(`Thank you ${name} for RSVPing ${numberOfGuests} guests. See you soon!`);
+          }
+          // Add the submitted name to the list of submitted names
+          submittedNames.push(name);
+        })
+        .catch(error => {
+          console.error('Error submitting the form:', error);
+        });
+    }
+  });
+});
+
 function checkForm(form) {
-  const name = form.elements['name'].value.trim().toLowerCase();
+  //
+  // validate form fields
+  //
 
-  if (submittedNames.includes(name)) {
-    alert('You have already submitted. Please do not submit again.');
-    return false;
-  }
-
+  form.myButton.disabled = true;
   return true;
 }
