@@ -98,13 +98,10 @@ window.addEventListener("load", function () {
 });
 
 function checkForm(form) {
-  const name = form.elements['name'].value.trim();
-  const quantity = form.elements['quantity'].value.trim();
+//
+// validate form fields
+//
 
-  if (name === '' || quantity === '') {
-    alert('Please fill out both fields before submitting the form.');
-    return false;
-  }
-
-  return true;
+form.myButton.disabled = true;
+return true;
 }
