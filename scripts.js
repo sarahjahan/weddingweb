@@ -76,11 +76,7 @@ window.addEventListener("load", function () {
 
     // Check for duplicates before submitting
     if (submittedNames.includes(name)) {
-      if (numberOfGuests == 1) {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
-      } else {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
-      }
+      alert('You have already submitted. Please do not submit again.');
     } else {
       fetch(action, {
         method: 'POST',
