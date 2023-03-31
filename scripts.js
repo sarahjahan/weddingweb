@@ -11,7 +11,6 @@ function capitalizeWords(str) {
     .join(' ');
 }
 
-// Fetch names and max quantities from the text file
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr47iQKanqBg_tgFAHrgMerLgfyc_kqTvkT96zNl0Q497PAL1t00Tjsz/pub?gid=1685786161&single=true&output=csv')
   .then(response => response.text())
   .then(text => {
@@ -25,7 +24,6 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr
     console.error('Error fetching names and quantities:', error);
   });
 
-// Fetch submitted names from the Google Sheet
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr47iQKanqBg_tgFAHrgMerLgfyc_kqTvkT96zNl0Q497PAL1t00Tjsz/pub?gid=0&single=true&output=csv')
   .then(response => response.text())
   .then(text => {
@@ -64,37 +62,25 @@ nameInput.addEventListener('input', (e) => {
   }
 });
 
-function checkForm(form) {
-  const name = form.elements['name'].value.trim();
-  const quantity = form.elements['quantity'].value.trim();
-
-  if (name === '' || quantity === '') {
-    alert('Please fill out both fields before submitting the form.');
-    return false;
-  }
-
-  form.myButton.disabled = true;
-  return true;
-}
-
 window.addEventListener("load", function () {
   const form = document.getElementById('my-form');
   form.addEventListener("submit", function (e) {
-    if (checkForm(form)) {
-      e.preventDefault();
-      const data = new FormData(form);
-      const action = e.target.action;
-      const name = form.name.value.trim().toLowerCase();
-      const capitalizedName = capitalizeWords(name);
-      const numberOfGuests = form.quantity.value;
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    const name = form.name.value.trim().toLowerCase();
+    const capitalizedName = capitalizeWords(name);
+    const numberOfGuests = form.quantity.value;
 
-      // Check for duplicates before submitting
-      if (submittedNames.includes(name)) {
-        if (numberOfGuests == 1) {
-          alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
-        } else {
-          alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
-        };
+    if (submittedNames.includes(name)) {
+      if (numberOfGuests == 1) {
+        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
+      } else {
+        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
+      }
+    } else {
+      if (name === "" || numberOfGuests === "") {
+        alert("Please fill out both name and number of guests.");
       } else {
         fetch(action, {
           method: 'POST',
@@ -112,3 +98,7 @@ window.addEventListener("load", function () {
   });
 });
 
+function checkForm(form) {
+  form.myButton.disabled = true;
+  return true;
+}
