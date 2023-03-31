@@ -4,7 +4,8 @@ let names = [];
 let maxQuantities = {};
 
 // Fetch names and max quantities from the text file
-fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr47iQKanqBg_tgFAHrgMerLgfyc_kqTvkT96zNl0Q497PAL1t00Tjsz/pub?gid=1685786161&single=true&output=csv')
+fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr47iQKanqBg_tgFAHrgMerLgfyc_kqTvkT96zNl0Q497PAL1t00Tjsz/pub?output=csv')
+
   .then(response => response.text())
   .then(text => {
     text.split('\n').forEach(line => {
