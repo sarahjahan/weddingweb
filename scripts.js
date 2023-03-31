@@ -99,6 +99,6 @@ window.addEventListener("load", function () {
 });
 
 function checkForm(form) {
-  form.myButton.disabled = false;
+  form.myButton.disabled = true;
   return true;
 }
