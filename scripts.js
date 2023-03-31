@@ -92,12 +92,13 @@ function checkForm(form) {
   const name = form.elements['name'].value.trim().toLowerCase();
   const quantity = form.elements['quantity'].value;
 
+  if (name === '') {
+    alert('Please enter your name.');
+    return false;
+  }
+
   if (submittedNames.includes(name)) {
-    if (quantity == 1) {
-      alert(`Looks like we’ve already received a submission for your group for ${quantity} guest. If there’s a mistake, please call or text one of us.`);
-    } else {
-      alert(`Looks like we’ve already received a submission for your group for ${quantity} guests. If there’s a mistake, please call or text one of us.`);
-    }
+    alert('You have already submitted. Please do not submit again.');
     return false;
   }
 
