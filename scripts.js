@@ -30,7 +30,7 @@ nameInput.addEventListener('input', (e) => {
                 li.addEventListener('click', () => {
                     nameInput.value = match;
                     const quantityInput = document.querySelector('input[name="quantity"]');
-                    quantityInput.setAttribute('data-max', maxQuantities[match.toLowerCase()] || 0);
+                    quantityInput.setAttribute('data-max', maxQuantities[match.toLowerCase()] || 1);
                     suggestions.classList.remove('visible');
                 });
                 suggestions.appendChild(li);
