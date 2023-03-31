@@ -327,30 +327,32 @@ function checkForm(form)
 
 /*------------------------ Quantity Selector ----------------------------- */
 
-$("button").on("click", function(ev) {
+$("button").on("click", function (ev) {
 	var currentQty = $('input[name="quantity"]').val();
 	var qtyDirection = $(this).data("direction");
 	var newQty = 0;
-
+	var maxQty = parseInt($('input[name="quantity"]').attr("data-max"), 10) || 0;
+  
 	if (qtyDirection == "1") {
 	  newQty = parseInt(currentQty) + 1;
-	}
-	else if (qtyDirection == "-1") {
+	} else if (qtyDirection == "-1") {
 	  newQty = parseInt(currentQty) - 1;
 	}
-
+  
 	// Enable the decrement button when the quantity is 1 or greater
 	if (newQty >= 1) {
 	  $(".decrement-quantity").removeAttr("disabled");
 	} else if (newQty == 0) {
 	  $(".decrement-quantity").attr("disabled", "disabled");
 	}
-
-	if (newQty >= 0) {
+  
+	// Check if the new quantity is within the allowed range (0 to maxQty)
+	if (newQty >= 0 && newQty <= maxQty) {
 	  newQty = newQty.toString();
 	  $('input[name="quantity"]').val(newQty);
-	}
-	else {
-	  $('input[name="quantity"]').val("1");
+	} else if (newQty > maxQty) {
+	  $('input[name="quantity"]').val(maxQty.toString());
+	} else {
+	  $('input[name="quantity"]').val("0");
 	}
   });
