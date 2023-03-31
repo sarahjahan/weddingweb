@@ -11,6 +11,7 @@ function capitalizeWords(str) {
     .join(' ');
 }
 
+// Fetch names and max quantities from the text file
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr47iQKanqBg_tgFAHrgMerLgfyc_kqTvkT96zNl0Q497PAL1t00Tjsz/pub?gid=1685786161&single=true&output=csv')
   .then(response => response.text())
   .then(text => {
@@ -24,6 +25,7 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr
     console.error('Error fetching names and quantities:', error);
   });
 
+// Fetch submitted names from the Google Sheet
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr47iQKanqBg_tgFAHrgMerLgfyc_kqTvkT96zNl0Q497PAL1t00Tjsz/pub?gid=0&single=true&output=csv')
   .then(response => response.text())
   .then(text => {
@@ -72,6 +74,7 @@ window.addEventListener("load", function () {
     const capitalizedName = capitalizeWords(name);
     const numberOfGuests = form.quantity.value;
 
+    // Check for duplicates before submitting
     if (submittedNames.includes(name)) {
       if (numberOfGuests == 1) {
         alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
@@ -79,26 +82,36 @@ window.addEventListener("load", function () {
         alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
       }
     } else {
-      if (name === "" || numberOfGuests === "") {
-        alert("Please fill out both name and number of guests.");
-      } else {
-        fetch(action, {
-          method: 'POST',
-          body: data,
-        })
-        .then(() => {
-          if (numberOfGuests == 1) {
-            alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest. See you soon!`);
-          } else {
-            alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guests. See you soon!`);
-          }
-        });
-      }
+      fetch(action, {
+        method: 'POST',
+        body: data,
+      })
+      .then(() => {
+        if (numberOfGuests == 1) {
+          alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest. See you soon!`);
+        } else {
+          alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guests. See you soon!`);
+        }
+      });
     }
   });
 });
 
 function checkForm(form) {
-  form.myButton.disabled = false;
+  const name = form.elements['name'].value.trim().toLowerCase();
+  const quantity = form.elements['quantity'].value;
+
+  if (submittedNames.includes(name)) {
+    alert('You have already submitted. Please do not submit again.');
+    return false;
+  }
+
+  if (quantity === '' || isNaN(quantity)) {
+    alert('Please enter a valid number for the quantity.');
+    return false;
+  }
+
+  form.myButton.disabled = true;
   return true;
 }
+
