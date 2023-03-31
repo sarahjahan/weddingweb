@@ -94,7 +94,7 @@ window.addEventListener("load", function () {
           alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
         } else {
           alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
-        };
+        }
       } else {
         fetch(action, {
           method: 'POST',
@@ -108,7 +108,5 @@ window.addEventListener("load", function () {
           }
         });
       }
-    }
   });
 });
-
