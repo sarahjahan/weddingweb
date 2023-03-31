@@ -64,44 +64,51 @@ nameInput.addEventListener('input', (e) => {
   }
 });
 
+function checkForm(form) {
+  const name = form.elements['name'].value.trim();
+  const quantity = form.elements['quantity'].value.trim();
+
+  if (name === '' || quantity === '') {
+    alert('Please fill out both fields before submitting the form.');
+    return false;
+  }
+
+  form.myButton.disabled = true;
+  return true;
+}
+
 window.addEventListener("load", function () {
   const form = document.getElementById('my-form');
   form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const action = e.target.action;
-    const name = form.name.value.trim().toLowerCase();
-    const capitalizedName = capitalizeWords(name);
-    const numberOfGuests = form.quantity.value;
+    if (checkForm(form)) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = e.target.action;
+      const name = form.name.value.trim().toLowerCase();
+      const capitalizedName = capitalizeWords(name);
+      const numberOfGuests = form.quantity.value;
 
-    // Check for duplicates before submitting
-    if (submittedNames.includes(name)) {
-      if (numberOfGuests == 1) {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
-      } else {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
-      };
-    } else {
-      fetch(action, {
-        method: 'POST',
-        body: data,
-      })
-      .then(() => {
+      // Check for duplicates before submitting
+      if (submittedNames.includes(name)) {
         if (numberOfGuests == 1) {
-          alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest. See you soon!`);
+          alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
         } else {
-          alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guests. See you soon!`);
-        }
-      });
-  }
-});
+          alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
+        };
+      } else {
+        fetch(action, {
+          method: 'POST',
+          body: data,
+        })
+        .then(() => {
+          if (numberOfGuests == 1) {
+            alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest. See you soon!`);
+          } else {
+            alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guests. See you soon!`);
+          }
+        });
+      }
+    }
+  });
 });
 
-function checkForm(form) {
-//
-// validate form fields
-//
-
-form.myButton.disabled = true;
-return true;
-}
