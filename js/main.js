@@ -339,20 +339,20 @@ $("button").on("click", function (ev) {
 	  newQty = parseInt(currentQty) - 1;
 	}
   
-	// Enable the decrement button when the quantity is 1 or greater
-	if (newQty >= 1) {
+	// Enable the decrement button when the quantity is 2 or greater
+	if (newQty >= 2) {
 	  $(".decrement-quantity").removeAttr("disabled");
-	} else if (newQty == 0) {
+	} else if (newQty <= 1) {
 	  $(".decrement-quantity").attr("disabled", "disabled");
 	}
   
-	// Check if the new quantity is within the allowed range (0 to maxQty)
-	if (newQty >= 0 && newQty <= maxQty) {
+	// Check if the new quantity is within the allowed range (1 to maxQty)
+	if (newQty >= 1 && newQty <= maxQty) {
 	  newQty = newQty.toString();
 	  $('input[name="quantity"]').val(newQty);
 	} else if (newQty > maxQty) {
 	  $('input[name="quantity"]').val(maxQty.toString());
 	} else {
-	  $('input[name="quantity"]').val("0");
+	  $('input[name="quantity"]').val("1");
 	}
   });
