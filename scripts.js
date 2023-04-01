@@ -100,5 +100,5 @@ window.addEventListener("load", function () {
 
 function checkForm(form) {
   form.myButton.disabled = false;
-  return true;
+  return false;
 }
