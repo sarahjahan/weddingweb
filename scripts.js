@@ -92,13 +92,15 @@ window.addEventListener("load", function () {
           } else {
             alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guests. See you soon!`);
           }
+          const submitButton = document.querySelector('.rsvpformbutton');
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.classList.remove('rsvpformbutton');
+            submitButton.classList.add('rsvpformclicked');
+          }
         });
       }
     }
   });
 });
 
-function checkForm(form) {
-  form.myButton.disabled = true;
-  return true;
-}

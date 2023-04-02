@@ -701,11 +701,9 @@
 	}
 
 	input[type="submit"] {
-	   background-color: var(--backgroundprimary)!important;
 	   padding: 10px;
 	   font-size: 20px !important;
 	   font-weight: 700;
-	   color: var(--backgroundsecondary) !important;
 	}
 
 	input[type="email"],
@@ -853,8 +851,6 @@
 		font-family: var(--mainfont);
 		font-size: 1.4rem;
 		text-transform: uppercase;
-		background: #d8d8d8;
-		color: #313131;
 		text-decoration: none;
 		cursor: pointer;
 		text-align: center;
@@ -4223,4 +4219,20 @@
 	font-family: var(--ptext);
 	font-weight: 100;
 	font-style: normal;
+}
+
+.rsvpformbutton{
+	background-color: white!important;
+	color: var(--backgroundsecondary)!important;
+}
+
+.rsvpformbutton:hover {
+	background-color: var(--backgroundsecondary)!important;
+	color: white!important;
+	box-shadow: inset 0px 0px 1px 1px white;
+}
+
+.rsvpformclicked {
+	background-color: rgba(235, 235, 235, 0.3)!important;
+	color:  rgb(255, 255, 255, 0.3)!important;
 }
