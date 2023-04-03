@@ -65,22 +65,24 @@
 		  background-color: rgba(0, 0, 0, 0);
 		}
 	  </style>
+	<!--
+		<script>
 
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			// Disable double-click zoom
-			document.addEventListener('dblclick', function(e) {
-				e.preventDefault();
-			});
-
-			// Disable pinch-zoom gesture on touch devices
-			document.addEventListener('touchmove', function(e) {
-				if (e.scale !== 1) {
+			document.addEventListener('DOMContentLoaded', function() {
+				// Disable double-click zoom
+				document.addEventListener('dblclick', function(e) {
 					e.preventDefault();
-				}
-			}, { passive: false });
-		});
-	</script>
+				});
+
+				// Disable pinch-zoom gesture on touch devices
+				document.addEventListener('touchmove', function(e) {
+					if (e.scale !== 1) {
+						e.preventDefault();
+					}
+				}, { passive: false });
+			});
+		</script>
+	-->
 </head>
 
 <body id="top">
