@@ -70,7 +70,7 @@
 	 --fontcolor2: var(--primary);
 	 --fontcolor3: var(--primary);
 	 --body: 150rem;
-	 --border: solid 1px var(--backgroundsecondary);
+	 --border: solid 1px rgb(182, 182, 182);
 	 --bordercolor: var(--secondary20);
 	 --borderradius: 10px;
 	 --overlaycolor: var(--primary);
