@@ -4277,3 +4277,18 @@
 	display: flex!important;
 	flex-direction: column!important;
 }
+
+input[type="file" i] {
+    appearance: none;
+    background-color: white;
+    cursor: default;
+    align-items: baseline;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space-collapse: preserve;
+    text-wrap: nowrap;
+    text-align: start !important;
+    padding: initial;
+    border: initial;
+    overflow: hidden !important;
+}
