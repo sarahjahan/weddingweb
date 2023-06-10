@@ -135,17 +135,18 @@
 
 					<!-- form -->
 					<div id="register" class="row" aria-label="register">
-						<form id="my-form" class="form" method="post" onsubmit="event.preventDefault();">
+						<form id="my-form" class="form" method="post" action="https://script.google.com/macros/s/AKfycbxKcXcNglDp_aOELglqiREbhSHueuCoqZmr19GEP8v-WddX93hcDgYNVP9qFAnO0wkosw/exec" onsubmit="event.preventDefault();">
 							<div class="nameinput">
 								<input class="my-textbox" placeholder="Type your name..." type="text" id="name" name="name" autocomplete="off" required>
-								<ul id="suggestions"></ul>
+								<ul id="suggestions" class="hidden"></ul>
 							</div>
 							<div id="table-number" style="display: none;">
 								<h3>Your Table Number is: <span id="table-number-value"></span></h3>
 							</div>
-							<input type="submit" value="Submit">
+							<input class="rsvpformbutton" type="submit" value="Submit">
 						</form>
 					</div>
+					
 					
 
                             

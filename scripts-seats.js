@@ -21,21 +21,21 @@ nameInput.addEventListener('input', (e) => {
   if (input.length > 0) {
     const matches = Object.keys(namesAndTables).filter(name => name.includes(input));
     if (matches.length > 0) {
-      suggestions.classList.add('visible');
+      suggestions.classList.remove('hidden'); // change this from 'visible' to 'hidden' to match your home page's JS
       matches.forEach(match => {
         const li = document.createElement('li');
         li.textContent = match;
         li.addEventListener('click', () => {
           nameInput.value = match;
-          suggestions.classList.remove('visible');
+          suggestions.classList.add('hidden'); // add 'hidden' when a suggestion is clicked
         });
         suggestions.appendChild(li);
       });
     } else {
-      suggestions.classList.remove('visible');
+      suggestions.classList.add('hidden');
     }
   } else {
-    suggestions.classList.remove('visible');
+    suggestions.classList.add('hidden');
   }
 });
 
