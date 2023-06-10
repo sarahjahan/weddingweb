@@ -4264,7 +4264,7 @@
     max-width: 100%;
 	background: var(--secondary);
 	transition: all 0.3s ease-in-out;
-	gap: 1rem;
+	gap: .8rem;
 }
 
 .table-box p {
