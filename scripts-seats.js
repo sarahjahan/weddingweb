@@ -12,7 +12,7 @@ function capitalizeWords(str) {
     .join(' ');
 }
 
-fetch('https://docs.google.com/spreadsheets/d/e/YOUR_NEW_SPREADSHEET_ID/pub?gid=YOUR_GID&single=true&output=csv')
+fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vTcqgeG8RB_X6aGehomJnhDLDW3_93fCKZlfskIBd8_JrcCjzuIwuWsRTqpQrhdCnb4kH0lMGR6cE6u/pub?output=csv')
   .then(response => response.text())
   .then(text => {
     text.split('\n').forEach(line => {
