@@ -135,20 +135,25 @@
 
 					<!-- form -->
 					<div id="register" class="row" aria-label="register">
-						<form id="my-form" class="form" method="post" action="https://script.google.com/macros/s/AKfycbxKcXcNglDp_aOELglqiREbhSHueuCoqZmr19GEP8v-WddX93hcDgYNVP9qFAnO0wkosw/exec" onsubmit="event.preventDefault();">
-							<div class="nameinput">
-								<input class="my-textbox" placeholder="Type your name..." type="text" id="name" name="name" autocomplete="off" required>
-								<ul id="suggestions" class="hidden"></ul>
+						<form id="my-form" class="form" method="post" action="https://script.google.com/macros/s/AKfycbxKcXcNglDp_aOELglqiREbhSHueuCoqZmr19GEP8v-WddX93hcDgYNVP9qFAnO0wkosw/exec" onsubmit="return checkForm(this)" >
+						<div class="nameinput">
+							<input class="my-textbox" placeholder="Name" type="text" id="name" name="name" autocomplete="off" required="">
+							<ul id="suggestions" class="hidden"></ul>
+						</div>
+						<div class="product-quantity">
+							<label for="quantity"></label>
+							<input data-min="1" data-max="0" type="text" class="quantity-box" name="quantity" placeholder="# of Guests" readonly="true" required="">
+							<div class="quantity-selectors-container">
+							<div class="quantity-selectors">
+								<button type="button" class="decrement-quantity" aria-label="Subtract one" data-direction="-1"><span>&#8722;</span></button>
+								<button type="button" class="increment-quantity" aria-label="Add one" data-direction="1"><span>&#43;</span></button>
 							</div>
-							<div id="table-number" style="display: none;">
-								<h3>Your Table Number is: <span id="table-number-value"></span></h3>
 							</div>
-							<input class="rsvpformbutton" type="submit" value="Submit">
+						</div>
+						<input class="rsvpformbutton" type="submit" name="myButton" id="register" value="Submit">
 						</form>
-					</div>
-					
-					
-					
+
+					</div>	
 
                             
 
