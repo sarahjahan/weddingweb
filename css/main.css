@@ -4253,7 +4253,7 @@
 
 .table-box {
 	display: block;
-    color: var(--primary);
+    color: var(--primary)!important;
     margin-bottom: 0;
 	width: 100%;
     border: none;
@@ -4265,9 +4265,5 @@
     max-width: 100%;
 	background: var(--secondary);
 	transition: all 0.3s ease-in-out;
-	text-align: left;
-}
-
-#table-number {
-	color: black!important;
+	text-align: left!important;
 }
