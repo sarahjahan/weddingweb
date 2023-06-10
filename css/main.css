@@ -4266,3 +4266,7 @@
 	background: var(--secondary);
 	transition: all 0.3s ease-in-out;
 }
+
+#table-number {
+	color: black;
+}
