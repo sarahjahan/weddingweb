@@ -134,16 +134,18 @@
 						<div class="col-twelve">
 
 							<!-- form -->
-								<div id="register" class="row" aria-label="register">
-									<form id="my-form" class="form" method="post" action="https://script.google.com/macros/s/AKfycbxKcXcNglDp_aOELglqiREbhSHueuCoqZmr19GEP8v-WddX93hcDgYNVP9qFAnO0wkosw/exec" onsubmit="return checkForm(this)" >
-									<div class="nameinput">
-										<input class="my-textbox" placeholder="Name" type="text" id="name" name="name" autocomplete="off" required="">
-										<ul id="suggestions" class="hidden"></ul>
-									</div>
-									<input class="rsvpformbutton" type="submit" name="myButton" id="register" value="Submit">
-									</form>
-
-								</div>
+                            <div id="register" class="row" aria-label="register">
+                                <form id="my-form" class="form" method="post" onsubmit="event.preventDefault()">
+                                    <div class="nameinput">
+                                        <input class="my-textbox" placeholder="Type your name..." type="text" id="name" name="name" autocomplete="off" required>
+                                        <ul id="suggestions"></ul>
+                                    </div>
+                                    <div id="table-number" style="display: none;">
+                                        <h3>Your Table Number is: <span id="table-number-value"></span></h3>
+                                    </div>
+                                </form>
+                            </div>
+                            
 
 							<!-- contact-warning -->
 
@@ -219,7 +221,7 @@
    <script src="js/jquery-2.1.3.min.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
-   <script src="scripts-seats.js"></script>
+   <script src="scripts.js"></script>
 
 
 </body>
