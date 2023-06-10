@@ -3,10 +3,6 @@ const suggestions = document.getElementById('suggestions');
 const tableNumberValue = document.getElementById('table-number-value');
 let namesAndTables = {};
 
-function capitalizeWords(str) {
-  return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-}
-
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vTcqgeG8RB_X6aGehomJnhDLDW3_93fCKZlfskIBd8_JrcCjzuIwuWsRTqpQrhdCnb4kH0lMGR6cE6u/pub?output=csv')
   .then(response => response.text())
   .then(text => {
@@ -31,7 +27,6 @@ nameInput.addEventListener('input', (e) => {
         li.textContent = match;
         li.addEventListener('click', () => {
           nameInput.value = match;
-          tableNumberValue.textContent = namesAndTables[match] || 'No table assigned';
           suggestions.classList.remove('visible');
         });
         suggestions.appendChild(li);
@@ -41,5 +36,20 @@ nameInput.addEventListener('input', (e) => {
     }
   } else {
     suggestions.classList.remove('visible');
+  }
+});
+
+// Get the form and submit button elements
+const form = document.getElementById('my-form');
+
+// Add a submit event listener to the form
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent the form from actually submitting
+  const name = nameInput.value.trim().toLowerCase();
+  if (name in namesAndTables) {
+    tableNumberValue.textContent = namesAndTables[name] || 'No table assigned';
+    document.getElementById('table-number').style.display = 'block';
+  } else {
+    alert('Name not found. Please try again.');
   }
 });
