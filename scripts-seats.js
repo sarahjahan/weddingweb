@@ -1,15 +1,10 @@
 const nameInput = document.getElementById('name');
 const suggestions = document.getElementById('suggestions');
-const tableNumberDisplay = document.getElementById('table-number');
 const tableNumberValue = document.getElementById('table-number-value');
-
 let namesAndTables = {};
 
 function capitalizeWords(str) {
-  return str
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+  return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vTcqgeG8RB_X6aGehomJnhDLDW3_93fCKZlfskIBd8_JrcCjzuIwuWsRTqpQrhdCnb4kH0lMGR6cE6u/pubhtml')
@@ -27,18 +22,16 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vTcqgeG8RB_X6aGehomJnhDLD
 nameInput.addEventListener('input', (e) => {
   const input = e.target.value.trim().toLowerCase();
   suggestions.innerHTML = '';
-  tableNumberDisplay.style.display = 'none';
   if (input.length > 0) {
     const matches = Object.keys(namesAndTables).filter(name => name.includes(input));
     if (matches.length > 0) {
       suggestions.classList.add('visible');
       matches.forEach(match => {
         const li = document.createElement('li');
-        li.textContent = capitalizeWords(match);
+        li.textContent = match;
         li.addEventListener('click', () => {
-          nameInput.value = capitalizeWords(match);
-          tableNumberValue.textContent = namesAndTables[match];
-          tableNumberDisplay.style.display = 'block';
+          nameInput.value = match;
+          tableNumberValue.textContent = namesAndTables[match] || 'No table assigned';
           suggestions.classList.remove('visible');
         });
         suggestions.appendChild(li);
