@@ -4253,7 +4253,6 @@
 
 .table-box {
 	display: block;
-    color: var(--primary)!important;
     margin-bottom: 0;
 	width: 100%;
     border: none;
@@ -4265,5 +4264,10 @@
     max-width: 100%;
 	background: var(--secondary);
 	transition: all 0.3s ease-in-out;
+}
+
+.table-box p {
 	text-align: left!important;
+	color: var(--primary)!important;
+	transition: all 0.3s ease-in-out;
 }
