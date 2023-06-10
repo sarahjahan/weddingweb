@@ -4327,8 +4327,9 @@ input[type=file]::file-selector-button:hover {
 	transition: all 0.3s ease-in-out;
   }
 
-.safwanlogo {
+.safwanlogo{
 	display: flex;
 	height: 5rem;
 	width: auto;
+	justify-content: center;
 }
