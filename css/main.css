@@ -4326,3 +4326,9 @@ input[type=file]::file-selector-button:hover {
 	box-shadow: inset 0px 0px 1px 1px white;
 	transition: all 0.3s ease-in-out;
   }
+
+.safwanlogo {
+	display: flex;
+	height: 5rem;
+	width: auto;
+}
