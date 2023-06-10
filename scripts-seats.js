@@ -26,31 +26,31 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vTcqgeG8RB_X6aGehomJnhDLD
   });
 
 
-nameInput.addEventListener('input', (e) => {
-  const input = e.target.value.trim().toLowerCase();
-  suggestions.innerHTML = '';
-  if (input.length > 0) {
-    const matches = names.filter(name => name.toLowerCase().includes(input));
-    if (matches.length > 0) {
-      suggestions.classList.add('visible');
-      matches.forEach(match => {
-        const li = document.createElement('li');
-        li.textContent = match;
-        li.addEventListener('click', () => {
-          nameInput.value = match;
-          const quantityInput = document.querySelector('input[name="quantity"]');
-          quantityInput.setAttribute('data-max', maxQuantities[match.toLowerCase()] || 1);
-          suggestions.classList.remove('visible');
+  nameInput.addEventListener('input', (e) => {
+    const input = e.target.value.trim().toLowerCase();
+    suggestions.innerHTML = '';
+    if (input.length > 0) {
+      const matches = names.filter(name => name.toLowerCase().includes(input));
+      if (matches.length > 0) {
+        suggestions.classList.add('visible');
+        matches.forEach(match => {
+          const li = document.createElement('li');
+          li.textContent = match;
+          li.addEventListener('click', () => {
+            nameInput.value = match;
+            tableNumberInput.value = tableNumbers[match.toLowerCase()] || '';
+            suggestions.classList.remove('visible');
+          });
+          suggestions.appendChild(li);
         });
-        suggestions.appendChild(li);
-      });
+      } else {
+        suggestions.classList.remove('visible');
+      }
     } else {
       suggestions.classList.remove('visible');
     }
-  } else {
-    suggestions.classList.remove('visible');
-  }
-});
+  });
+  
 
 window.addEventListener("load", function () {
   const form = document.getElementById('my-form');
