@@ -4296,7 +4296,6 @@ input[type=file]::file-selector-button {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	height: 100%;
 	text-align: center;
   }
 
