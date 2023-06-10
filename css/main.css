@@ -4250,3 +4250,11 @@
 	height: 100%;
 	object-fit: contain;
 }
+
+.tableinput {
+	margin-top: 1rem;
+  }
+  
+  .tableinput input {
+	border-radius: var(--borderradius);
+  }

@@ -1,7 +1,8 @@
 const nameInput = document.getElementById('name');
 const suggestions = document.getElementById('suggestions');
+const tableNumberInput = document.getElementById('table-number');
 let names = [];
-let maxQuantities = {};
+let tableNumbers = {};
 let submittedNames = [];
 
 function capitalizeWords(str) {
@@ -11,30 +12,19 @@ function capitalizeWords(str) {
     .join(' ');
 }
 
-fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr47iQKanqBg_tgFAHrgMerLgfyc_kqTvkT96zNl0Q497PAL1t00Tjsz/pub?gid=1685786161&single=true&output=csv')
+fetch('https://docs.google.com/spreadsheets/d/e/YOUR_NEW_SPREADSHEET_ID/pub?gid=YOUR_GID&single=true&output=csv')
   .then(response => response.text())
   .then(text => {
     text.split('\n').forEach(line => {
-      const [name, maxQuantity] = line.split(',').map(value => value.trim());
+      const [name, tableNumber] = line.split(',').map(value => value.trim());
       names.push(name);
-      maxQuantities[name.toLowerCase()] = parseInt(maxQuantity, 10);
+      tableNumbers[name.toLowerCase()] = tableNumber;
     });
   })
   .catch(error => {
-    console.error('Error fetching names and quantities:', error);
+    console.error('Error fetching names and table numbers:', error);
   });
 
-fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr47iQKanqBg_tgFAHrgMerLgfyc_kqTvkT96zNl0Q497PAL1t00Tjsz/pub?gid=0&single=true&output=csv')
-  .then(response => response.text())
-  .then(text => {
-    text.split('\n').forEach(line => {
-      const [name] = line.split(',').map(value => value.trim());
-      submittedNames.push(name.toLowerCase());
-    });
-  })
-  .catch(error => {
-    console.error('Error fetching submitted names:', error);
-  });
 
 nameInput.addEventListener('input', (e) => {
   const input = e.target.value.trim().toLowerCase();
