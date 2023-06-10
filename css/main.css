@@ -4280,7 +4280,6 @@
 
 input[type="file" i] {
     appearance: none;
-    background-color: white;
     cursor: default;
     text-overflow: ellipsis;
     white-space-collapse: preserve;
