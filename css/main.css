@@ -4308,6 +4308,8 @@ input[type=file]::file-selector-button {
     font-weight: 700;
 	background-color: white!important;
     color: var(--backgroundsecondary)!important;
+	border-top-left-radius: var(--borderradius);
+	border-top-right-radius: var(--borderradius);
   }
 
 input[type=file]::file-selector-button:hover {
