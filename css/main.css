@@ -4251,10 +4251,18 @@
 	object-fit: contain;
 }
 
-.tableinput {
-	margin-top: 1rem;
-  }
-  
-  .tableinput input {
+.table-box {
+	display: block;
+	width: 100%;
+    color: var(--primary);
+    margin-bottom: 0;
+    border: none;
+    font-size: 16px;
 	border-radius: var(--borderradius);
-  }
+    height: 6.6rem;
+    padding: 1.8rem 2rem;
+	line-height: 3rem;
+    max-width: 100%;
+	background: var(--secondary);
+	transition: all 0.3s ease-in-out;
+}
