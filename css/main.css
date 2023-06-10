@@ -4304,6 +4304,10 @@ input[type=file]::file-selector-button {
 	border: none;
 	font-family: var(--mainfont);
 	text-transform: uppercase;
+	font-size: 20px !important;
+    font-weight: 700;
+	background-color: white!important;
+    color: var(--backgroundsecondary)!important;
   }
 
 input[type=file]::file-selector-button:hover {
