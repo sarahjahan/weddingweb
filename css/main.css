@@ -4272,3 +4272,8 @@
 	color: var(--primary)!important;
 	transition: all 0.3s ease-in-out;
 }
+
+.file-selector {
+	display: flex!important;
+	flex-direction: column!important;
+}
