@@ -4276,6 +4276,7 @@
 .file-selector {
 	display: flex!important;
 	flex-direction: column!important;
+	height: 13.2rem;
 }
 
 input[type="file" i] {
