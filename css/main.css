@@ -4288,8 +4288,15 @@ input[type="file" i] {
     padding: initial;
     border: initial;
     overflow: hidden !important;
-	border: 1px dashed white;
+	border: 2px dashed white;
+	transition: all 0.3s ease-in-out;
 }
+
+input[type="file" i]:hover {
+	background-color: rgb (255,255,255,.15);
+	transition: all 0.3s ease-in-out;
+}
+
 
 input[type=file]::file-selector-button {
 	background-color: white;
@@ -4309,6 +4316,7 @@ input[type=file]::file-selector-button {
 	border-top-left-radius: var(--borderradius);
 	border-top-right-radius: var(--borderradius);
 	margin-bottom: 1rem;
+	transition: all 0.3s ease-in-out;
   }
 
 input[type=file]::file-selector-button:hover {
@@ -4316,4 +4324,5 @@ input[type=file]::file-selector-button:hover {
 	background-color: var(--backgroundsecondary)!important;
 	color: white!important;
 	box-shadow: inset 0px 0px 1px 1px white;
+	transition: all 0.3s ease-in-out;
   }
