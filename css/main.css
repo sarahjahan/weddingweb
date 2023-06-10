@@ -4284,8 +4284,6 @@ input[type="file" i] {
     appearance: none;
     cursor: default;
     text-overflow: ellipsis;
-    white-space-collapse: preserve;
-    text-wrap: nowrap;
     text-align: start !important;
     padding: initial;
     border: initial;
