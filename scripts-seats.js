@@ -1,6 +1,6 @@
 const nameInput = document.getElementById('name');
 const suggestions = document.getElementById('suggestions');
-const tableNumberInput = document.getElementById('table-number');
+const tableNumberParagraph = document.getElementById('table-number');
 let names = [];
 let tableNumbers = {};
 
@@ -36,6 +36,7 @@ nameInput.addEventListener('input', (e) => {
         li.textContent = match;
         li.addEventListener('click', () => {
           nameInput.value = match;
+          tableNumberParagraph.textContent = tableNumbers[match.toLowerCase()] || '';
           suggestions.classList.remove('visible');
         });
         suggestions.appendChild(li);
@@ -47,6 +48,3 @@ nameInput.addEventListener('input', (e) => {
     suggestions.classList.remove('visible');
   }
 });
-
-
-
