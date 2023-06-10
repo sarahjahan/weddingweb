@@ -4288,7 +4288,7 @@ input[type="file" i] {
     padding: initial;
     border: initial;
     overflow: hidden !important;
-	box-shadow: inset 0px 0px 1px 1px white;
+	border: 1px dashed white;
 }
 
 input[type=file]::file-selector-button {
