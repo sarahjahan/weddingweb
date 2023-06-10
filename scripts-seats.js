@@ -38,7 +38,7 @@ nameInput.addEventListener('input', (e) => {
           nameInput.value = match;
           suggestions.classList.remove('visible');
         });
-        suggestions.appendChild(li);
+        suggestions.appendChild('li');
       });
     } else {
       suggestions.classList.remove('visible');
