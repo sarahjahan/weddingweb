@@ -43,7 +43,6 @@
    ================================================== -->
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
-	<script src="https://apis.google.com/js/api.js"></script>
 
 
    <!-- favicons
@@ -135,12 +134,8 @@
 						<div class="col-twelve">
 
 							<!-- form -->
-								<div id="register" class="row" aria-label="register">
-									<form action="/upload" method="post" enctype="multipart/form-data">
-										<input type="file" name="myFiles" multiple>
-										<input type="submit" value="Upload">
-									  </form>
-								</div>
+							<button id="authorize_button">Authorize and Upload</button>
+							<input type="file" id="fileInput" multiple/>
 
 							<!-- contact-warning -->
 
