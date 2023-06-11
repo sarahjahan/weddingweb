@@ -4366,3 +4366,7 @@ input[type=file]::file-selector-button:hover {
 	justify-content: center;
 	gap: 2rem;
 }
+
+.photowidth {
+	width: 100%;
+}
