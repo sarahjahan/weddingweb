@@ -4350,3 +4350,9 @@ input[type=file]::file-selector-button:hover {
 	justify-content: center;
 	align-items: center;
 }
+
+.photouploadfix {
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+}
