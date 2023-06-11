@@ -4354,6 +4354,7 @@ input[type=file]::file-selector-button:hover {
 
 .photoupload p:hover {
 	text-decoration: none;
+	color: white!important;
 }
 
 .photouploadfix {
