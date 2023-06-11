@@ -4352,6 +4352,10 @@ input[type=file]::file-selector-button:hover {
 	align-items: center;
 }
 
+.photoupload p:hover {
+	text-decoration: none;
+}
+
 .photouploadfix {
 	display: flex;
 	justify-content: center;
