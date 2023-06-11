@@ -4340,4 +4340,5 @@ input[type=file]::file-selector-button:hover {
 	display: flex;
 	width: 100%;
 	border-radius: var(--borderradius);
+	justify-content: center;
 }
