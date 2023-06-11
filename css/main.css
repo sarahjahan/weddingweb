@@ -4350,6 +4350,7 @@ input[type=file]::file-selector-button:hover {
 	width: 100%;
 	justify-content: center;
 	align-items: center;
+	text-transform: uppercase;
 }
 
 .photoupload p:hover {
