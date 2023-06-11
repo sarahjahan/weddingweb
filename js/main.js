@@ -332,7 +332,7 @@ $("button").on("click", function (ev) {
 
 // Client ID and API key from the Developer Console
 var CLIENT_ID = '856859640510-iahdp0mmjftg7v68v23ujr2j09dqmu1b.apps.googleusercontent.com';
-var API_KEY = 'AIzaSyChxKVAlcL1SvZoAj57gLxV69hJuBaRD5Y;
+var API_KEY = 'AIzaSyChxKVAlcL1SvZoAj57gLxV69hJuBaRD5Y';
 
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
