@@ -4356,3 +4356,8 @@ input[type=file]::file-selector-button:hover {
 	justify-content: center;
 	height: 100vh;
 }
+
+.photobox {
+	height: 100%;
+	width: 100%;
+}
