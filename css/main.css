@@ -4343,3 +4343,6 @@ input[type=file]::file-selector-button:hover {
 	justify-content: center;
 	color: var(--backgroundsecondary)!important;
 }
+.photoupload p{
+	color: var(--backgroundsecondary)!important;
+}
