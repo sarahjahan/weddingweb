@@ -4341,5 +4341,5 @@ input[type=file]::file-selector-button:hover {
 	width: 100%;
 	border-radius: var(--borderradius);
 	justify-content: center;
-	color: var(--backgroundsecondary);
+	color: var(--backgroundsecondary)!important;
 }
