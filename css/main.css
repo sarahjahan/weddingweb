@@ -4340,9 +4340,13 @@ input[type=file]::file-selector-button:hover {
 	display: flex;
 	width: 100%;
 	border-radius: var(--borderradius);
-	justify-content: center;
 	color: var(--backgroundsecondary)!important;
 }
 .photoupload p{
 	color: var(--backgroundsecondary)!important;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
 }
