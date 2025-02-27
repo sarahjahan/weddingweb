@@ -47,7 +47,7 @@
   :root {
 
 	 --backgroundprimary: #ffffff;
-	 --backgroundsecondary: #869478;
+	 --backgroundsecondary: #9C3848;
 	 --backgroundtertiary:  rgb(240, 225, 216);
 	 --background4:  rgb(22,178,146);
 	 --primary: rgba(0,0,0,1);
@@ -97,6 +97,7 @@
 	@media only screen and (max-width:768px) {
 		html {
 			font-size: 10px;
+			
 		}
 	}
 	@media only screen and (max-width:400px) {
@@ -136,10 +137,12 @@
 	   .wrapper {
 		flex-direction: column;
 
+
 	   }
    }
 	@media only screen and (max-width:600px) {
 	   .wrapper {
+
 
 	   }
    }
@@ -206,7 +209,7 @@
 	 * -------------------------------------------------------------------
 	 */
 
-	 ul, {
+	 ul {
 	   display: block;
 	   list-style-type: disc;
 	   margin-block-start: 0em;
@@ -796,23 +799,26 @@
 	label, legend {
 		font-family: var(--mainfont);
 		font-size: 1.4rem;
-		margin-bottom: .6rem;
+		/* margin-bottom: .6rem; */
 		color: #3b3b3b;
-		display: block;
+		display: inline-block;
 	}
 	input[type="checkbox"], input[type="radio"] {
 		display: inline;
+		align-items: baseline;
+
 	}
 	label > .label-text {
-		display: inline-block;
+		display: inline-block; 
 		margin-left: 1rem;
 		font-family: var(--mainfont);
 		line-height: inherit;
 	}
+
 	label > input[type="checkbox"], label > input[type="radio"] {
 		margin: 0;
 		position: relative;
-		top: .15rem;
+		top: .15rem; 
 	}
 
 	/**
@@ -3017,26 +3023,9 @@
 		   .incentivebox {
 			   padding: 30px 10px;
 		   }
-		   .contactbox2 {
-
-		   }
+		
 	  }
 
-	#contact .section-intro h1 {
-		;
-	}
-	#contact .section-intro h5 {
-
-	}
-	#contact .section-intro p {
-
-	}
-
-
-	/* contact form */
-	.contact-form {
-
-	}
 
 	#my-form {
 		display: flex;
@@ -3046,9 +3035,7 @@
 
 	#my-form input {
 		border-radius: var(--borderradius);
-		height: 6.6rem;
 		padding: 1.8rem 2rem;
-
 	}
 
 
@@ -3120,6 +3107,7 @@
 	#contact input[type="email"] {
 
 	}
+
 	#contact input[type="text"]:focus,
 	#contact input[type="password"]:focus,
 	#contact input[type="email"]:focus {
@@ -3988,6 +3976,11 @@
 .quantity-box {
 	border-top-right-radius: 0!important;
 	border-bottom-right-radius: 0!important;
+	
+}
+
+input.quantity-box {
+	height: 6.6rem;
 }
 
 
@@ -4066,9 +4059,6 @@
 	text-transform: uppercase;
 }
 
-.rsvpcaption {
-
-}
 
 .contact-box {
 	margin-top: 1rem;
@@ -4076,11 +4066,6 @@
 
 .contact-box p {
 	margin-bottom: 0rem!important;
-}
-
-.contact-box-link {
-	text-decoration:
-
 }
 
 .contacttitle {
@@ -4195,10 +4180,7 @@
 
 .mobilevideo {
 	display: none!important;
-}
-
-.desktopvideo {
-
+	display: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4246,7 +4228,7 @@
 }
 
 .mobileinfo img {
-	display: flex;
+	display: none;
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
@@ -4379,4 +4361,20 @@ input[type=file]::file-selector-button:hover {
 
 .emailbutton:hover {
 	text-decoration: none!important;
+}
+
+.eventsinput {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 30px; 
+	align-items: center;
+	margin-top: 10px;
+	
+}
+
+.eventsinput label {
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
 }

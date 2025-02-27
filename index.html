@@ -154,16 +154,30 @@
 									<form id="my-form" class="form" method="post" action="https://script.google.com/macros/s/AKfycbxKcXcNglDp_aOELglqiREbhSHueuCoqZmr19GEP8v-WddX93hcDgYNVP9qFAnO0wkosw/exec" onsubmit="return checkForm(this)" >
 									<div class="nameinput">
 										<input class="my-textbox" placeholder="Name" type="text" id="name" name="name" autocomplete="off" required="">
-										<ul id="suggestions" class="hidden"></ul>
+										<!-- <ul id="suggestions" class="hidden"></ul> -->
 									</div>
 									<div class="product-quantity">
 										<label for="quantity"></label>
-										<input data-min="1" data-max="0" type="text" class="quantity-box" name="quantity" placeholder="# of Guests" readonly="true" required="">
+										<input data-min="1" data-max="10" type="text" class="quantity-box" name="quantity" placeholder="# of Guests" readonly="true" required="">
 										<div class="quantity-selectors-container">
 										<div class="quantity-selectors">
 											<button type="button" class="decrement-quantity" aria-label="Subtract one" data-direction="-1"><span>&#8722;</span></button>
 											<button type="button" class="increment-quantity" aria-label="Add one" data-direction="1"><span>&#43;</span></button>
 										</div>
+										</div>
+									</div>
+									<div class="eventsinput">
+										<div>
+											<input class="eventsselection" type="checkbox" id="event1" name="Baraat">
+											<label for="event1">Baraat</label>
+										</div>
+										<div>
+											<input class="eventsselection" type="checkbox" id="event2" name="Walima">
+											<label for="event2">Walima</label>
+										</div>
+										<div>
+											<input class="eventsselection" type="checkbox" id="event3" name="Mehndi">
+											<label for="event3">Mehndi</label>
 										</div>
 									</div>
 									<input class="rsvpformbutton" type="submit" name="myButton" id="register" value="Submit">
@@ -218,7 +232,7 @@
 		<section id="photogallerypage">
 			<h1>Photos</h1>
 			<p>Captured some good photos during the event?</p>
-			<p>We’d love for you to share it by sending it to <a class="underline" href="mailto:safwanandsarah@gmail.com">safwanandsarah@gmail.com</a>.</p>
+			<p>We’d love for you to share it by sending it to <a class="underline" href="mailto:safwanandsarah@gmail.com">example-email@gmail.com</a>.</p>
 			<p>We will remind you to check back here after the reception to view the full gallery.</p>
 		</section>
 
