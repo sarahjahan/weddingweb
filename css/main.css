@@ -1535,9 +1535,9 @@
 
 	}
 
-	.main-navigation .condologo {
+	/* .main-navigation .condologo {
 	   filter: brightness(100);
-	}
+	} */
 
 	.main-navigation > li {
 		display: block;
@@ -2637,15 +2637,6 @@
 		margin-bottom: 1.8rem;
 	}
 
-	#amenities .section-intro h1 {
-
-	}
-	#amenities .section-intro h5 {
-
-	}
-	#amenities .section-intro p {
-
-	}
 
 	.service {
 		display: flex;
@@ -2682,13 +2673,7 @@
 	.services-list .icon i {
 		font-size: 5.4rem;
 	}
-	.services-list h3 {
 
-
-	}
-	.services-list .desc {
-
-	}
 
 	.amenityrow {
 	   display: flex;
@@ -2702,10 +2687,6 @@
 	   columns: 2;
 	}
 
-	.amenitylist li:last-child {
-
-
-	}
 
 	.amenitytitle {
 	   display: flex;
@@ -2812,7 +2793,7 @@
 
 	   .scroll h3 {
 		   margin: 0;
-	   } s
+	   } 
 
    }
 
