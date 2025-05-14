@@ -109,8 +109,7 @@ window.addEventListener("load", function () {
   const form = document.getElementById('my-form');
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const data = new FormData(form);
-    const action = e.target.action;
+
     const name = form.name.value.trim().toLowerCase();
     const capitalizedName = capitalizeWords(name);
     const numberOfGuests = form.quantity.value;
@@ -125,13 +124,7 @@ window.addEventListener("load", function () {
       if (name === "" || numberOfGuests === "") {
         alert("Please fill out both name and number of guests.");
       } else {
-
-    fetch(action, {
-      method: 'POST',
-      body: data,
-    })
-      .then(response => response.json())
-      .then(result => {
+        // ✅ Fake success message
         alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest${numberOfGuests > 1 ? 's' : ''}. See you soon!`);
 
         const submitButton = document.querySelector('.rsvpformbutton');
@@ -140,7 +133,6 @@ window.addEventListener("load", function () {
           submitButton.classList.remove('rsvpformbutton');
           submitButton.classList.add('rsvpformclicked');
         }
-      })
       }
     }
   });
