@@ -62,45 +62,101 @@ nameInput.addEventListener('input', (e) => {
   // }
 });
 
+// window.addEventListener("load", function () {
+//   const form = document.getElementById('my-form');
+//   form.addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     const data = new FormData(form);
+//     const action = e.target.action;
+//     const name = form.name.value.trim().toLowerCase();
+//     const capitalizedName = capitalizeWords(name);
+//     const numberOfGuests = form.quantity.value;
+
+//     if (submittedNames.includes(name)) {
+//       if (numberOfGuests == 1) {
+//         alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
+//       } else {
+//         alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
+//       }
+//     } else {
+//       if (name === "" || numberOfGuests === "") {
+//         alert("Please fill out both name and number of guests.");
+//       } else {
+//         fetch(action, {
+//           method: 'POST',
+//           body: data,
+//         })
+//         .then(() => {
+//           if (numberOfGuests == 1) {
+//             alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest. See you soon!`);
+//           } else {
+//             alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guests. See you soon!`);
+//           }
+//           const submitButton = document.querySelector('.rsvpformbutton');
+//           if (submitButton) {
+//             submitButton.disabled = true;
+//             submitButton.classList.remove('rsvpformbutton');
+//             submitButton.classList.add('rsvpformclicked');
+//           }
+//         });
+//       }
+//     }
+//   });
+// });
+
+
 window.addEventListener("load", function () {
   const form = document.getElementById('my-form');
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
     const data = new FormData(form);
     const action = e.target.action;
     const name = form.name.value.trim().toLowerCase();
     const capitalizedName = capitalizeWords(name);
     const numberOfGuests = form.quantity.value;
 
+    if (name === "" || numberOfGuests === "") {
+      alert("Please fill out both name and number of guests.");
+      return;
+    }
+
     if (submittedNames.includes(name)) {
-      if (numberOfGuests == 1) {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
-      } else {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
-      }
-    } else {
-      if (name === "" || numberOfGuests === "") {
-        alert("Please fill out both name and number of guests.");
-      } else {
-        fetch(action, {
-          method: 'POST',
-          body: data,
-        })
-        .then(() => {
-          if (numberOfGuests == 1) {
-            alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest. See you soon!`);
-          } else {
-            alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guests. See you soon!`);
-          }
+      alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest${numberOfGuests > 1 ? 's' : ''}. If there’s a mistake, please call or text one of us.`);
+      return;
+    }
+
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Server returned ${response.status}`);
+        }
+        return response.json(); // Parse JSON response
+      })
+      .then(result => {
+        if (result.status === 'success') {
+          alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest${numberOfGuests > 1 ? 's' : ''}. See you soon!`);
+          
           const submitButton = document.querySelector('.rsvpformbutton');
           if (submitButton) {
             submitButton.disabled = true;
             submitButton.classList.remove('rsvpformbutton');
             submitButton.classList.add('rsvpformclicked');
           }
-        });
-      }
-    }
+        } else {
+          alert("Submission failed. Please try again.");
+          console.error("Server response:", result);
+        }
+      })
+      .catch(error => {
+        console.error("Fetch error:", error);
+        console.log("Raw response:", text);
+
+        alert("There was an issue submitting your RSVP. Please try again later.");
+      });
   });
 });
-
