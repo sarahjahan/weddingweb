@@ -1,5 +1,5 @@
 const nameInput = document.getElementById('name');
-const suggestions = document.getElementById('suggestions');
+// const suggestions = document.getElementById('suggestions');
 let names = [];
 let maxQuantities = {};
 let submittedNames = [];
@@ -11,7 +11,7 @@ function capitalizeWords(str) {
     .join(' ');
 }
 
-fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr47iQKanqBg_tgFAHrgMerLgfyc_kqTvkT96zNl0Q497PAL1t00Tjsz/pub?gid=1685786161&single=true&output=csv')
+fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr47iQKanqBg_tgFAHrgMerLgfyc_kqTvkT96zNl0Q497PAL1t00Tjsz/pub?gid=0&single=true&output=csv')
   .then(response => response.text())
   .then(text => {
     text.split('\n').forEach(line => {
@@ -38,28 +38,28 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxIo5cPZffEUpclFdDS_Whdr
 
 nameInput.addEventListener('input', (e) => {
   const input = e.target.value.trim().toLowerCase();
-  suggestions.innerHTML = '';
-  if (input.length > 0) {
-    const matches = names.filter(name => name.toLowerCase().includes(input));
-    if (matches.length > 0) {
-      suggestions.classList.add('visible');
-      matches.forEach(match => {
-        const li = document.createElement('li');
-        li.textContent = match;
-        li.addEventListener('click', () => {
-          nameInput.value = match;
-          const quantityInput = document.querySelector('input[name="quantity"]');
-          quantityInput.setAttribute('data-max', maxQuantities[match.toLowerCase()] || 1);
-          suggestions.classList.remove('visible');
-        });
-        suggestions.appendChild(li);
-      });
-    } else {
-      suggestions.classList.remove('visible');
-    }
-  } else {
-    suggestions.classList.remove('visible');
-  }
+  // suggestions.innerHTML = '';
+  // if (input.length > 0) {
+  //   const matches = names.filter(name => name.toLowerCase().includes(input));
+  //   if (matches.length > 0) {
+  //     suggestions.classList.add('visible');
+  //     matches.forEach(match => {
+  //       const li = document.createElement('li');
+  //       li.textContent = match;
+  //       li.addEventListener('click', () => {
+  //         nameInput.value = match;
+  //         const quantityInput = document.querySelector('input[name="quantity"]');
+  //         quantityInput.setAttribute('data-max', maxQuantities[match.toLowerCase()] || 1);
+  //         suggestions.classList.remove('visible');
+  //       });
+  //       suggestions.appendChild(li);
+  //     });
+  //   } else {
+  //     suggestions.classList.remove('visible');
+  //   }
+  // } else {
+  //   suggestions.classList.remove('visible');
+  // }
 });
 
 window.addEventListener("load", function () {

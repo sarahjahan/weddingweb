@@ -43,6 +43,21 @@
    ================================================== -->
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
+	<script>
+
+  function checkForm(form) {
+    // Example: assuming your form has these fields
+    const name = form.querySelector('input[name="Name"]').value.trim();
+    // Basic validation
+    if (!name) {
+      alert("Please enter your name.");
+      return false;
+    }
+
+    // If all checks pass, return true to allow form submission
+    return true;
+  }
+</script>
 
 
    <!-- favicons
@@ -151,7 +166,7 @@
 
 							<!-- form -->
 								<div id="register" class="row" aria-label="register">
-									<form id="my-form" class="form" method="post" action="https://script.google.com/macros/s/AKfycbxKcXcNglDp_aOELglqiREbhSHueuCoqZmr19GEP8v-WddX93hcDgYNVP9qFAnO0wkosw/exec" onsubmit="return checkForm(this)" >
+									<form id="my-form" class="form" method="post" action="https://script.google.com/macros/s/AKfycby6lScMXHX4KxQpew4VW8UbxR2g2k6IUh_77Cnk56yVjvXL-xykJWSw_nQz0q6IbTRS/exec" onsubmit="return checkForm(this)" >
 									<div class="nameinput">
 										<input class="my-textbox" placeholder="Name" type="text" id="name" name="name" autocomplete="off" required="">
 										<!-- <ul id="suggestions" class="hidden"></ul> -->
@@ -172,7 +187,7 @@
 											<label for="event1">Baraat</label>
 										</div>
 										<div>
-											<input class="eventsselection" type="checkbox" id="event2" name="Walima">
+											9<input class="eventsselection" type="checkbox" id="event2" name="Walima">
 											<label for="event2">Walima</label>
 										</div>
 										<div>
@@ -180,7 +195,7 @@
 											<label for="event3">Mehndi</label>
 										</div>
 									</div> -->
-									<input class="rsvpformbutton" type="submit" name="myButton" id="register" value="Submit">
+									<input class="rsvpformbutton" type="submit" name="myButton" id="submitRSVP" value="Submit">
 									</form>
 
 								</div>
