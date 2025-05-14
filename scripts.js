@@ -124,7 +124,6 @@ window.addEventListener("load", function () {
       if (name === "" || numberOfGuests === "") {
         alert("Please fill out both name and number of guests.");
       } else {
-        // ✅ Fake success message
         alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest${numberOfGuests > 1 ? 's' : ''}. See you soon!`);
 
         const submitButton = document.querySelector('.rsvpformbutton');
