@@ -343,64 +343,64 @@ var SCOPES = 'https://www.googleapis.com/auth/drive.file';
 
 var authorizeButton = document.getElementById('authorize_button');
 
-// function handleClientLoad() {
-//     gapi.load('client:auth2', initClient);
-// }
+function handleClientLoad() {
+    gapi.load('client:auth2', initClient);
+}
 
-// function initClient() {
-//     gapi.client.init({
-//         apiKey: API_KEY,
-//         clientId: CLIENT_ID,
-//         discoveryDocs: DISCOVERY_DOCS,
-//         scope: SCOPES
-//     }).then(function () {
-//         // Listen for sign-in state changes.
-//         gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-//         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-//         authorizeButton.onclick = handleAuthClick;
-//     }, function(error) {
-//         console.error(JSON.stringify(error));
-//     });
-// }
+function initClient() {
+    gapi.client.init({
+        apiKey: API_KEY,
+        clientId: CLIENT_ID,
+        discoveryDocs: DISCOVERY_DOCS,
+        scope: SCOPES
+    }).then(function () {
+        // Listen for sign-in state changes.
+        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+        authorizeButton.onclick = handleAuthClick;
+    }, function(error) {
+        console.error(JSON.stringify(error));
+    });
+}
 
-// function updateSigninStatus(isSignedIn) {
-//     if (isSignedIn) {
-//         authorizeButton.style.display = 'none';
-//         uploadFiles();
-//     } else {
-//         authorizeButton.style.display = 'block';
-//     }
-// }
+function updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+        authorizeButton.style.display = 'none';
+        uploadFiles();
+    } else {
+        authorizeButton.style.display = 'block';
+    }
+}
 
-// function handleAuthClick(event) {
-//     gapi.auth2.getAuthInstance().signIn();
-// }
+function handleAuthClick(event) {
+    gapi.auth2.getAuthInstance().signIn();
+}
 
-// function uploadFiles() {
-//     var fileInput = document.getElementById('fileInput');
-//     var file = fileInput.files[0];
-//     var metadata = {
-//         'name': file.name,
-//         'mimeType': file.type
-//     };
+function uploadFiles() {
+    var fileInput = document.getElementById('fileInput');
+    var file = fileInput.files[0];
+    var metadata = {
+        'name': file.name,
+        'mimeType': file.type
+    };
 
-//     var accessToken = gapi.auth.getToken().access_token;
-//     var form = new FormData();
-//     form.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
-//     form.append('file', file);
+    var accessToken = gapi.auth.getToken().access_token;
+    var form = new FormData();
+    form.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
+    form.append('file', file);
 
-//     var xhr = new XMLHttpRequest();
-//     xhr.open('post', 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id');
-//     xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-//     xhr.responseType = 'json';
-//     xhr.onload = () => {
-//         console.log(xhr.response.id); 
-//     };
-//     xhr.send(form);
-// }
+    var xhr = new XMLHttpRequest();
+    xhr.open('post', 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id');
+    xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+    xhr.responseType = 'json';
+    xhr.onload = () => {
+        console.log(xhr.response.id); 
+    };
+    xhr.send(form);
+}
 
-// // Load the API client and auth2 library
-// handleClientLoad();
+// Load the API client and auth2 library
+handleClientLoad();
   
   
 

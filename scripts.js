@@ -105,25 +105,36 @@ nameInput.addEventListener('input', (e) => {
 // });
 
 
+
 window.addEventListener("load", function () {
   const form = document.getElementById('my-form');
+  
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const data = new FormData(form);
+    const action = e.target.action;
     const name = form.name.value.trim().toLowerCase();
     const capitalizedName = capitalizeWords(name);
     const numberOfGuests = form.quantity.value;
 
     if (submittedNames.includes(name)) {
-      if (numberOfGuests == 1) {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest. If there’s a mistake, please call or text one of us.`);
-      } else {
-        alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guests. If there’s a mistake, please call or text one of us.`);
-      }
-    } else {
-      if (name === "" || numberOfGuests === "") {
-        alert("Please fill out both name and number of guests.");
-      } else {
+      alert(`Looks like we’ve already received a submission for your group for ${numberOfGuests} guest${numberOfGuests > 1 ? 's' : ''}. If there’s a mistake, please call or text one of us.`);
+      return;
+    }
+
+    if (name === "" || numberOfGuests === "") {
+      alert("Please fill out both name and number of guests.");
+      return;
+    }
+
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+    .then(response => response.json())
+    .then(result => {
+      if (result.status === 'success') {
         alert(`Thank you ${capitalizedName} for RSVPing ${numberOfGuests} guest${numberOfGuests > 1 ? 's' : ''}. See you soon!`);
 
         const submitButton = document.querySelector('.rsvpformbutton');
@@ -132,7 +143,14 @@ window.addEventListener("load", function () {
           submitButton.classList.remove('rsvpformbutton');
           submitButton.classList.add('rsvpformclicked');
         }
+      } else {
+        alert("Something went wrong. Please try again.");
+        console.error("Server error:", result);
       }
-    }
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+      alert("There was a problem submitting your RSVP. Please try again later.");
+    });
   });
 });
