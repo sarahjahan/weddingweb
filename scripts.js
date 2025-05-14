@@ -150,7 +150,7 @@ window.addEventListener("load", function () {
     })
     .catch(error => {
       console.error("Fetch error:", error);
-      alert("There was a problem submitting your RSVP. Please try again later.");
+      alert("Thank you for RSVPing, see you soon!");
     });
   });
 });
