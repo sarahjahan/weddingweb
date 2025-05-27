@@ -4160,20 +4160,20 @@ input.quantity-box {
 }
 
 .mobilevideo {
-	display: none!important;
-	display: hidden;
+	display: flex;
+	border-bottom: beige .1rem solid;
+	background-color: transparent;
+	width: 800px;
+
 }
 
 @media only screen and (max-width: 768px) {
-
 	.mobilevideo {
-		display: block!important;
+		display: block;
 	}
-
 	.desktopvideo {
 		display: none;
 	}
-
 }
 
 .underline {
