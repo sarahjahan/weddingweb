@@ -4163,6 +4163,7 @@ input.quantity-box {
 	width: 100%;
 	height: auto;
 	display: block;
+	border-bottom: beige .1rem solid;
 
 }
 
